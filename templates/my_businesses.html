@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}My Businesses{% endblock %}
+{% block content %}
+<h2 class="mb-4"><i class="bi bi-briefcase"></i> My Businesses</h2>
+
+{% if profiles %}
+<div class="row g-3">
+  {% for p in profiles %}
+  <div class="col-md-6 col-lg-4">
+    <div class="card panel-card h-100">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start">
+          <h5 class="card-title mb-1">{{ p.business_name }}</h5>
+          <span class="risk-badge risk-{{ p.predicted_risk.split(' ')[0].lower() }} small">{{ p.predicted_risk }}</span>
+        </div>
+        <p class="text-muted small mb-2">{{ p.business_type }} {{ '· ' + p.location if p.location }}</p>
+
+        <div class="d-flex align-items-center mb-2">
+          <div class="health-score-mini me-2">{{ p.overall_health_score }}</div>
+          <span class="text-muted small">Business Health Score</span>
+        </div>
+
+        <table class="table table-sm mb-2">
+          <tr><td class="text-muted">Monthly Profit</td><td class="text-end {{ 'text-danger' if p.net_profit < 0 else 'text-success' }}">₹{{ "{:,.0f}".format(p.net_profit) }}</td></tr>
+          <tr><td class="text-muted">ROI</td><td class="text-end">{{ p.roi_pct }}%</td></tr>
+          <tr><td class="text-muted">Break-even</td><td class="text-end">{{ (p.breakeven_months ~ ' mo') if p.breakeven_months else 'N/A' }}</td></tr>
+        </table>
+
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('analyzer.view_business_profile', profile_id=p.id) }}" class="btn btn-sm btn-outline-primary flex-fill">
+            <i class="bi bi-sliders"></i> What-If
+          </a>
+          <form method="POST" action="{{ url_for('analyzer.delete_business_profile', profile_id=p.id) }}" onsubmit="return confirm('Delete this business profile?');">
+            <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+          </form>
+        </div>
+        <div class="text-muted small mt-2">Saved {{ p.created_at.strftime('%d %b %Y') }}</div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="card panel-card">
+  <div class="card-body text-center py-5">
+    <i class="bi bi-briefcase display-4 text-muted"></i>
+    <p class="text-muted mt-3 mb-3">No saved businesses yet.</p>
+    <a href="{{ url_for('analyzer.business_analyzer') }}" class="btn btn-primary"><i class="bi bi-clipboard-data"></i> Analyze a Business</a>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

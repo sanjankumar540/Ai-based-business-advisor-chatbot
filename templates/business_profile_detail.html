@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block title %}{{ profile.business_name }} — What-If Simulator{% endblock %}
+{% block content %}
+<h2 class="mb-1"><i class="bi bi-sliders"></i> {{ profile.business_name }}</h2>
+<p class="text-muted mb-4">{{ profile.business_type }} · Saved {{ profile.created_at.strftime('%d %b %Y') }} ·
+  <span class="risk-badge risk-{{ profile.predicted_risk.split(' ')[0].lower() }} small">{{ profile.predicted_risk }}</span>
+  · Health Score: <strong>{{ profile.overall_health_score }}/100</strong>
+</p>
+
+<div class="row g-4">
+  <div class="col-lg-5">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title"><i class="bi bi-arrow-repeat"></i> What-If Simulator</h5>
+        <p class="text-muted small">Drag the sliders to see how changing your assumptions affects profit — instantly, without resubmitting.</p>
+
+        <label class="form-label">Price per Order: ₹<span id="priceVal">{{ profile.expected_price_per_order }}</span></label>
+        <input type="range" class="form-range" id="priceSlider" min="10" max="{{ (profile.expected_price_per_order * 4) | round(0) }}" value="{{ profile.expected_price_per_order }}">
+
+        <label class="form-label mt-2">Daily Customers: <span id="customersVal">{{ profile.expected_daily_customers }}</span></label>
+        <input type="range" class="form-range" id="customersSlider" min="1" max="{{ (profile.expected_daily_customers * 4) | round(0) }}" value="{{ profile.expected_daily_customers }}">
+
+        <label class="form-label mt-2">Monthly Rent: ₹<span id="rentVal">{{ profile.monthly_rent }}</span></label>
+        <input type="range" class="form-range" id="rentSlider" min="0" max="{{ ((profile.monthly_rent + 1) * 3) | round(0) }}" value="{{ profile.monthly_rent }}">
+
+        <label class="form-label mt-2">Marketing Budget: ₹<span id="marketingVal">{{ profile.marketing_budget_per_month }}</span></label>
+        <input type="range" class="form-range" id="marketingSlider" min="0" max="{{ ((profile.marketing_budget_per_month + 1) * 4) | round(0) }}" value="{{ profile.marketing_budget_per_month }}">
+
+        <button class="btn btn-outline-secondary btn-sm w-100 mt-3" id="resetBtn"><i class="bi bi-arrow-counterclockwise"></i> Reset to Saved Values</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Live Projected Results</h5>
+        <div class="row">
+          <div class="col-6 col-md-4 mb-3"><div class="metric-label">Monthly Revenue</div><div class="metric-value" id="outRevenue">-</div></div>
+          <div class="col-6 col-md-4 mb-3"><div class="metric-label">Monthly Cost</div><div class="metric-value" id="outCost">-</div></div>
+          <div class="col-6 col-md-4 mb-3"><div class="metric-label">Net Profit</div><div class="metric-value" id="outProfit">-</div></div>
+          <div class="col-6 col-md-4 mb-3"><div class="metric-label">Profit Margin</div><div class="metric-value" id="outMargin">-</div></div>
+          <div class="col-6 col-md-4 mb-3"><div class="metric-label">Annual ROI</div><div class="metric-value" id="outROI">-</div></div>
+          <div class="col-6 col-md-4 mb-3"><div class="metric-label">Break-even</div><div class="metric-value" id="outBreakeven">-</div></div>
+        </div>
+        <p class="text-muted small mb-0"><i class="bi bi-info-circle"></i> Calculated instantly in your browser using the same formulas as the server-side Feasibility Engine. Employee cost (₹{{ (profile.num_employees * profile.avg_employee_cost) | round(0) }}), raw material cost (₹{{ profile.raw_material_cost_per_month }}), and other expenses (₹{{ profile.other_monthly_expenses }}) stay fixed while you adjust the sliders above.</p>
+      </div>
+    </div>
+
+    <div class="card panel-card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">Saved Analysis (Original Inputs)</h5>
+        <div class="row small">
+          <div class="col-6">Startup Cost: ₹{{ "{:,.0f}".format(profile.startup_cost) }}</div>
+          <div class="col-6">Monthly Revenue: ₹{{ "{:,.0f}".format(profile.monthly_revenue) }}</div>
+          <div class="col-6">Monthly Cost: ₹{{ "{:,.0f}".format(profile.monthly_cost) }}</div>
+          <div class="col-6">Net Profit: ₹{{ "{:,.0f}".format(profile.net_profit) }}</div>
+          <div class="col-6">Profit Margin: {{ profile.profit_margin_pct }}%</div>
+          <div class="col-6">ROI: {{ profile.roi_pct }}%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const fixedCosts = {
+  employeeCost: {{ (profile.num_employees * profile.avg_employee_cost) }},
+  rawMaterial: {{ profile.raw_material_cost_per_month }},
+  otherExpenses: {{ profile.other_monthly_expenses }},
+};
+const startupCost = {{ profile.startup_cost }};
+
+const priceSlider = document.getElementById('priceSlider');
+const customersSlider = document.getElementById('customersSlider');
+const rentSlider = document.getElementById('rentSlider');
+const marketingSlider = document.getElementById('marketingSlider');
+
+const savedValues = {
+  price: parseFloat(priceSlider.value),
+  customers: parseFloat(customersSlider.value),
+  rent: parseFloat(rentSlider.value),
+  marketing: parseFloat(marketingSlider.value),
+};
+
+function formatCurrency(val) {
+  return '₹' + Math.round(val).toLocaleString('en-IN');
+}
+
+function recalculate() {
+  const price = parseFloat(priceSlider.value);
+  const customers = parseFloat(customersSlider.value);
+  const rent = parseFloat(rentSlider.value);
+  const marketing = parseFloat(marketingSlider.value);
+
+  document.getElementById('priceVal').textContent = price;
+  document.getElementById('customersVal').textContent = customers;
+  document.getElementById('rentVal').textContent = rent;
+  document.getElementById('marketingVal').textContent = marketing;
+
+  // Same formulas as ml/feasibility.py compute_feasibility()
+  const dailyRevenue = price * customers;
+  const monthlyRevenue = dailyRevenue * 30;
+  const monthlyCost = rent + fixedCosts.rawMaterial + marketing + fixedCosts.otherExpenses + fixedCosts.employeeCost;
+  const netProfit = monthlyRevenue - monthlyCost;
+  const profitMargin = monthlyRevenue > 0 ? (netProfit / monthlyRevenue * 100) : 0;
+  const annualProfit = netProfit * 12;
+  const roi = startupCost > 0 ? (annualProfit / startupCost * 100) : 0;
+  const breakeven = netProfit > 0 ? (startupCost / netProfit) : null;
+
+  document.getElementById('outRevenue').textContent = formatCurrency(monthlyRevenue);
+  document.getElementById('outCost').textContent = formatCurrency(monthlyCost);
+
+  const profitEl = document.getElementById('outProfit');
+  profitEl.textContent = formatCurrency(netProfit);
+  profitEl.className = 'metric-value ' + (netProfit < 0 ? 'text-danger' : 'text-success');
+
+  document.getElementById('outMargin').textContent = profitMargin.toFixed(1) + '%';
+  document.getElementById('outROI').textContent = roi.toFixed(1) + '%';
+  document.getElementById('outBreakeven').textContent = breakeven !== null ? breakeven.toFixed(1) + ' months' : 'Never (at current inputs)';
+}
+
+[priceSlider, customersSlider, rentSlider, marketingSlider].forEach(el => {
+  el.addEventListener('input', recalculate);
+});
+
+document.getElementById('resetBtn').addEventListener('click', function() {
+  priceSlider.value = savedValues.price;
+  customersSlider.value = savedValues.customers;
+  rentSlider.value = savedValues.rent;
+  marketingSlider.value = savedValues.marketing;
+  recalculate();
+});
+
+recalculate();
+</script>
+{% endblock %}

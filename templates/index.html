@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}AI Business Assistant — Home{% endblock %}
+{% block public_content %}
+<div class="landing-hero">
+  <div class="container text-center py-5">
+    <i class="bi bi-robot display-1 text-primary"></i>
+    <h1 class="mt-3 fw-bold">AI-Powered Business Entrepreneur Assistant</h1>
+    <p class="lead text-muted mx-auto" style="max-width: 640px;">
+      A Business Decision Support System — not just a chatbot. Get a real financial
+      feasibility analysis, ML-based risk prediction with explanations, a What-If
+      simulator, and a Business Health Score, powered by Generative AI, RAG, NLP, and
+      Machine Learning.
+    </p>
+    <div class="mt-4">
+      <a href="{{ url_for('auth.register') }}" class="btn btn-primary btn-lg me-2">Get Started</a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-outline-primary btn-lg">Login</a>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="bi bi-chat-dots text-primary fs-2"></i>
+          <h5 class="mt-2">AI Business Chat</h5>
+          <p class="text-muted">Ask natural-language business questions and get structured, actionable answers.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="bi bi-clipboard-data text-primary fs-2"></i>
+          <h5 class="mt-2">Feasibility + Health Score</h5>
+          <p class="text-muted">Real financial math (revenue, ROI, break-even) combined with ML risk into one 0-100 Business Health Score.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="bi bi-sliders text-primary fs-2"></i>
+          <h5 class="mt-2">What-If Simulator</h5>
+          <p class="text-muted">Drag sliders on price, customers, rent, and marketing to see profit recalculate instantly.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="bi bi-lightbulb text-primary fs-2"></i>
+          <h5 class="mt-2">ML-Scored Idea Generator</h5>
+          <p class="text-muted">Get comparable business ideas for your budget, each risk-scored by the real trained model.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

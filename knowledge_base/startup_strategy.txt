@@ -1,0 +1,11 @@
+A basic business plan should cover: executive summary, business description, target market, competitor analysis, marketing strategy, operations plan, financial overview, risk analysis, and growth strategy. Keeping each section concise and specific is more useful for early-stage decision-making than a long generic document.
+
+Customer segmentation groups customers by shared characteristics — such as spending level, purchase frequency, age, or income — so a business can tailor pricing, messaging, and product offerings to each group instead of using a single generic approach for everyone. Common segments include budget customers, regular customers, premium customers, and high-value/loyal customers.
+
+Target market identification involves defining who the ideal customer is (demographics, location, needs) and estimating the realistic size of that market in the founder's actual operating area, rather than citing only broad national or global market size figures which overstate real opportunity.
+
+Growth strategy options for an established small business include expanding to a new location, adding complementary products/services, entering a new customer segment, or moving into a new sales channel (e.g., online after starting offline). Businesses should generally validate one growth direction before pursuing several simultaneously.
+
+Competitive analysis should identify direct competitors (same product/service, same target customer) and indirect competitors (different product solving the same underlying customer need), and compare on price, quality, convenience, and brand trust to find a differentiation angle.
+
+Minimum viable product (MVP) strategy means launching the simplest version of a product/service that still delivers core value, in order to gather real customer feedback quickly and cheaply before investing in a fully-featured version.

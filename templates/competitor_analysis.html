@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Competitor Analysis{% endblock %}
+{% block content %}
+<h2 class="mb-1"><i class="bi bi-people"></i> Competitor Analysis</h2>
+<p class="text-muted mb-4">Enter up to 4 competitors to compare and find your differentiation angle.</p>
+
+<div class="row g-4">
+  <div class="col-lg-6">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Competitors</h5>
+        <form method="POST" action="{{ url_for('analyzer.competitor_analysis') }}">
+          {% for i in range(4) %}
+          <div class="border rounded p-2 mb-2">
+            <div class="small text-muted mb-1">Competitor {{ i + 1 }}{{ '' if i == 0 else ' (optional)' }}</div>
+            <input type="text" name="competitor_name" class="form-control form-control-sm mb-1" placeholder="Name" {{ 'required' if i == 0 }}>
+            <div class="row g-1">
+              <div class="col-4"><input type="text" name="competitor_price" class="form-control form-control-sm" placeholder="Price"></div>
+              <div class="col-4"><input type="text" name="competitor_strength" class="form-control form-control-sm" placeholder="Strength"></div>
+              <div class="col-4"><input type="text" name="competitor_weakness" class="form-control form-control-sm" placeholder="Weakness"></div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="mb-2">
+            <label class="form-label">Your Planned Differentiator</label>
+            <input type="text" name="your_differentiator" class="form-control" placeholder="e.g. Affordable + Healthy + Subscription" value="{{ form_data.your_differentiator or '' }}">
+          </div>
+          <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search"></i> Compare</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    {% if competitors %}
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Competitive Comparison</h5>
+        <table class="table table-sm">
+          <thead><tr><th>Competitor</th><th>Price</th><th>Strength</th><th>Weakness</th></tr></thead>
+          <tbody>
+            {% for c in competitors %}
+            <tr><td>{{ c.name }}</td><td>{{ c.price or '-' }}</td><td>{{ c.strength or '-' }}</td><td>{{ c.weakness or '-' }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        {% if form_data.your_differentiator %}
+        <div class="alert alert-info mt-3 mb-0">
+          <strong>Your Differentiation Opportunity:</strong><br>
+          {{ form_data.your_differentiator }}
+          <div class="small text-muted mt-1">
+            Compare this against each competitor's listed weaknesses above to confirm it addresses a real gap in the market.
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% else %}
+    <div class="card panel-card">
+      <div class="card-body">
+        <p class="text-muted mb-0">Enter at least one competitor to see the comparison.</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

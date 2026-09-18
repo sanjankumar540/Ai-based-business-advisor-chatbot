@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}AI Business Assistant{% endblock %}
+{% block content %}
+<div class="chat-layout">
+  <div class="chat-sidebar">
+    <form method="POST" action="{{ url_for('chatbot.new_conversation') }}">
+      <button type="submit" class="btn btn-primary w-100 mb-3"><i class="bi bi-plus-lg"></i> New Conversation</button>
+    </form>
+    <div class="conversation-list">
+      {% for conv in conversations %}
+      <a href="{{ url_for('chatbot.chat_home', conv_id=conv.id) }}"
+         class="conversation-item {{ 'active' if active_conversation and conv.id == active_conversation.id else '' }}">
+        <i class="bi bi-chat-left-text"></i>
+        <span>{{ conv.title }}</span>
+      </a>
+      {% else %}
+      <p class="text-muted small px-2">No conversations yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="chat-main">
+    <div class="chat-header">
+      <i class="bi bi-robot"></i> AI Business Assistant
+      {% if demo_mode %}<span class="badge bg-warning text-dark ms-2">Demo Mode</span>{% endif %}
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      {% if not messages %}
+        <div class="chat-empty-state">
+          <i class="bi bi-chat-dots display-4"></i>
+          <p>Ask me anything about starting or growing your business.</p>
+          <div class="suggestion-chips">
+            <span class="chip">Suggest a business idea for a college student</span>
+            <span class="chip">Marketing strategy for a clothing business</span>
+            <span class="chip">Analyze the risks of starting a restaurant</span>
+          </div>
+        </div>
+      {% endif %}
+      {% for msg in messages %}
+        <div class="chat-bubble {{ 'user-bubble' if msg.sender == 'user' else 'ai-bubble' }}">
+          <div class="bubble-sender">
+            {% if msg.sender == 'user' %}You{% else %}<i class="bi bi-robot"></i> AI Assistant{% endif %}
+            {% if msg.category %}<span class="badge bg-secondary ms-1">{{ msg.category }}</span>{% endif %}
+          </div>
+          <div class="bubble-content">{{ msg.message | replace('\n', '<br>') | safe }}</div>
+          {% if msg.sources %}
+          <div class="bubble-sources"><i class="bi bi-journal-text"></i> Sources: {{ msg.sources }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <form method="POST" action="{{ url_for('chatbot.send_message') }}" class="chat-input-bar" id="chatForm">
+      <input type="hidden" name="conv_id" value="{{ active_conversation.id if active_conversation else '' }}">
+      <input type="text" name="message" id="chatInput" class="form-control" placeholder="Type your business question..." autocomplete="off" required>
+      <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Send</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // scroll to bottom of chat on load
+  var chatMessages = document.getElementById('chatMessages');
+  if (chatMessages) { chatMessages.scrollTop = chatMessages.scrollHeight; }
+
+  // clicking a suggestion chip fills the input
+  document.querySelectorAll('.chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      document.getElementById('chatInput').value = chip.textContent;
+    });
+  });
+
+  // simple loading indicator on submit
+  var form = document.getElementById('chatForm');
+  if (form) {
+    form.addEventListener('submit', function() {
+      var btn = form.querySelector('button[type=submit]');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Thinking...';
+    });
+  }
+</script>
+{% endblock %}

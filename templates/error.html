@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Error {{ code }}{% endblock %}
+{% block public_content %}
+<div class="container text-center py-5">
+  <h1 class="display-3 text-danger">{{ code }}</h1>
+  <p class="lead">{{ message }}</p>
+  <a href="{{ url_for('dashboard.index') }}" class="btn btn-primary">Go Home</a>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container text-center py-5">
+  <h1 class="display-3 text-danger">{{ code }}</h1>
+  <p class="lead">{{ message }}</p>
+  <a href="{{ url_for('dashboard.dashboard_home') }}" class="btn btn-primary">Go to Dashboard</a>
+</div>
+{% endblock %}

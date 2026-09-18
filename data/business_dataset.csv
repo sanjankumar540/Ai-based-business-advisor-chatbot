@@ -1,0 +1,601 @@
+business_type,investment,market_demand,competition,experience,operating_cost,target_market,risk_level
+Education,200000,High,High,Medium,16240.75,Large,Medium Risk
+Manufacturing,200000,Low,High,Low,38879.95,Medium,High Risk
+Technology,50000,Low,Low,Low,7747.56,Small,High Risk
+Food & Beverage,100000,Medium,High,Medium,22198.81,Large,Low Risk
+Manufacturing,1500000,Low,High,High,317519.2,Small,High Risk
+Services,1000000,Low,High,Low,182504.46,Medium,High Risk
+Technology,500000,Low,Medium,Low,109228.48,Medium,High Risk
+Education,1000000,Medium,Medium,High,218906.77,Small,Medium Risk
+Food & Beverage,300000,Medium,High,Medium,31559.95,Small,High Risk
+E-commerce,100000,High,Low,Medium,7317.38,Large,Low Risk
+Retail,1000000,Medium,Low,Medium,183768.25,Small,High Risk
+E-commerce,100000,Medium,Low,Medium,20215.7,Medium,Medium Risk
+Education,750000,Low,High,Low,103400.48,Large,High Risk
+Services,200000,High,Low,Medium,40222.05,Small,Medium Risk
+Fashion & Clothing,750000,Medium,Low,High,158718.06,Small,Medium Risk
+Services,200000,High,Medium,High,45843.65,Large,Low Risk
+Technology,25000,Medium,Medium,Low,3012.84,Large,Medium Risk
+Retail,300000,High,Medium,Low,25097.46,Small,Medium Risk
+Services,25000,Low,Medium,Low,4731.52,Large,Medium Risk
+Retail,25000,High,Medium,Low,2975.36,Small,Medium Risk
+E-commerce,50000,Medium,Medium,Medium,8426.97,Large,Low Risk
+Education,500000,Medium,Medium,Medium,78577.47,Small,High Risk
+Retail,500000,High,High,Low,47024.1,Medium,Medium Risk
+Fashion & Clothing,750000,Low,High,Medium,178009.5,Small,High Risk
+E-commerce,1500000,Low,High,High,152382.49,Medium,High Risk
+Retail,50000,High,High,Medium,11326.36,Large,Medium Risk
+Retail,1500000,Medium,High,High,341125.93,Small,High Risk
+Fashion & Clothing,200000,High,Medium,Low,14058.86,Large,Medium Risk
+Retail,50000,Low,Medium,Medium,9019.61,Small,Medium Risk
+Fashion & Clothing,1000000,High,High,Medium,68734.95,Large,Medium Risk
+Technology,750000,Medium,Medium,High,110511.32,Large,Low Risk
+Retail,25000,Low,High,Low,1371.58,Small,High Risk
+Fashion & Clothing,25000,High,Medium,Low,5667.47,Small,Medium Risk
+Technology,300000,Medium,High,Low,33341.82,Large,High Risk
+Retail,100000,Low,Medium,High,18920.6,Medium,Medium Risk
+Technology,750000,Low,Medium,High,148615.29,Small,High Risk
+Retail,500000,Medium,Medium,High,106011.34,Small,Medium Risk
+Education,1500000,Medium,Low,Low,194035.15,Medium,High Risk
+Services,100000,Medium,Medium,Low,16565.6,Medium,Medium Risk
+Technology,500000,Medium,Low,Low,107260.06,Medium,Medium Risk
+E-commerce,300000,Medium,High,Low,52373.43,Medium,High Risk
+Education,100000,Medium,High,High,15326.01,Medium,Medium Risk
+E-commerce,25000,Medium,Medium,Medium,2504.3,Medium,Medium Risk
+Food & Beverage,2000000,Low,Medium,Medium,385838.37,Small,High Risk
+Manufacturing,25000,High,High,Medium,4308.6,Large,Medium Risk
+E-commerce,300000,Low,Medium,Low,20649.42,Medium,High Risk
+Technology,200000,Low,Low,High,42276.52,Small,High Risk
+Food & Beverage,2000000,High,High,Low,106121.82,Large,High Risk
+Food & Beverage,25000,Medium,High,Medium,5969.46,Medium,Medium Risk
+E-commerce,200000,Medium,Medium,Medium,28330.12,Large,Medium Risk
+E-commerce,300000,Medium,High,Medium,27401.06,Small,High Risk
+Fashion & Clothing,2000000,High,Medium,Low,298414.98,Medium,High Risk
+Manufacturing,50000,Medium,High,Medium,10534.81,Small,Medium Risk
+Fashion & Clothing,100000,High,Medium,Medium,20528.26,Large,Medium Risk
+Technology,300000,Low,High,Medium,29294.17,Medium,High Risk
+Fashion & Clothing,1500000,Medium,High,Medium,78251.3,Small,High Risk
+E-commerce,1500000,Medium,High,High,247031.37,Large,High Risk
+Manufacturing,200000,High,High,Low,47237.16,Medium,High Risk
+Education,2000000,Medium,High,Medium,146826.81,Small,High Risk
+Manufacturing,500000,Low,High,Low,107186.01,Medium,High Risk
+Food & Beverage,300000,Medium,Low,Medium,66788.31,Medium,Medium Risk
+Manufacturing,500000,High,Low,Low,68445.18,Small,Medium Risk
+Manufacturing,50000,Medium,Low,Low,3675.26,Small,Medium Risk
+Services,1500000,Medium,Medium,High,142078.75,Medium,High Risk
+Food & Beverage,300000,Low,High,High,30179.41,Large,High Risk
+Retail,25000,High,Medium,Medium,4171.57,Large,Low Risk
+Retail,2000000,High,High,Medium,348053.04,Medium,High Risk
+Food & Beverage,50000,Medium,Medium,Low,7032.41,Large,Medium Risk
+Retail,1500000,Medium,High,Medium,123785.08,Medium,High Risk
+Retail,50000,Low,High,Medium,4148.34,Small,Medium Risk
+Technology,25000,Medium,High,Medium,4997.89,Small,Medium Risk
+E-commerce,25000,Low,Low,Medium,3921.73,Small,High Risk
+Technology,100000,Medium,High,High,21992.95,Small,Medium Risk
+Retail,100000,Medium,Low,High,20139.98,Medium,Low Risk
+Services,1000000,Low,Medium,Medium,216274.3,Medium,High Risk
+Manufacturing,1500000,Medium,Medium,Medium,310400.48,Medium,High Risk
+Food & Beverage,100000,High,Medium,High,17161.76,Medium,Low Risk
+Education,50000,Medium,Medium,High,6465.43,Large,Low Risk
+Food & Beverage,100000,High,High,Medium,21841.83,Small,Medium Risk
+Food & Beverage,500000,Medium,Medium,Medium,49014.56,Large,Low Risk
+Education,1500000,Medium,Medium,Medium,284300.27,Small,High Risk
+Manufacturing,50000,Medium,Low,High,5950.83,Medium,Low Risk
+Manufacturing,500000,Low,Low,Medium,45633.37,Medium,Medium Risk
+E-commerce,1500000,Low,Medium,Medium,228497.1,Large,High Risk
+Education,25000,Medium,High,Medium,2172.61,Large,Medium Risk
+Technology,2000000,High,Medium,Medium,124936.55,Large,Medium Risk
+Fashion & Clothing,100000,High,High,Medium,15642.27,Small,Medium Risk
+E-commerce,1500000,High,Low,Medium,327213.0,Medium,Medium Risk
+Food & Beverage,1500000,High,Medium,Medium,311751.37,Small,High Risk
+Technology,50000,Medium,Medium,Medium,6287.73,Small,Medium Risk
+Technology,200000,Medium,Medium,Medium,49460.61,Small,Medium Risk
+Fashion & Clothing,200000,High,Low,High,12226.14,Small,Low Risk
+Education,100000,Medium,Medium,High,7240.78,Medium,Medium Risk
+Education,500000,High,Medium,Medium,107086.15,Medium,Medium Risk
+Education,1000000,Medium,High,Low,243598.81,Large,High Risk
+Services,25000,Medium,Medium,Medium,2021.81,Small,Medium Risk
+E-commerce,100000,Low,Medium,Low,6267.5,Medium,High Risk
+Retail,300000,Low,Low,Medium,51366.11,Large,Medium Risk
+Technology,25000,High,High,Medium,5914.69,Large,Medium Risk
+Technology,1000000,High,High,High,215026.54,Small,Medium Risk
+Manufacturing,100000,High,Medium,Medium,22544.01,Small,Low Risk
+Fashion & Clothing,100000,Medium,Medium,Medium,16549.73,Small,High Risk
+Retail,750000,Medium,Low,Low,118927.4,Medium,High Risk
+Fashion & Clothing,2000000,Low,High,Medium,313384.44,Large,High Risk
+E-commerce,200000,High,High,Medium,41142.88,Small,High Risk
+Food & Beverage,300000,High,Medium,High,21637.9,Small,Medium Risk
+Fashion & Clothing,200000,Medium,High,Low,19170.06,Small,High Risk
+E-commerce,200000,Medium,Medium,Low,17263.91,Medium,High Risk
+Fashion & Clothing,500000,Low,Medium,Low,86495.03,Medium,High Risk
+Retail,25000,Low,High,High,4075.67,Small,High Risk
+Fashion & Clothing,300000,High,Low,Medium,51402.9,Medium,Low Risk
+Food & Beverage,200000,Low,High,High,30753.52,Large,Medium Risk
+Manufacturing,1500000,High,Low,High,256116.46,Large,Medium Risk
+E-commerce,500000,Medium,Medium,Medium,70221.79,Large,Low Risk
+E-commerce,100000,Low,Medium,Low,5677.58,Small,High Risk
+Technology,2000000,Low,High,Low,484428.13,Small,High Risk
+Services,500000,High,Medium,Low,54959.59,Small,Medium Risk
+Fashion & Clothing,100000,Medium,Medium,Medium,12554.52,Large,Low Risk
+Food & Beverage,25000,High,Medium,Medium,3453.81,Medium,Medium Risk
+Services,25000,Medium,Low,High,2611.51,Large,Low Risk
+Technology,50000,Medium,Low,Low,9659.72,Small,High Risk
+E-commerce,1000000,Low,Medium,Medium,117854.25,Small,Medium Risk
+E-commerce,100000,High,Low,Low,9863.44,Medium,Medium Risk
+Fashion & Clothing,200000,High,Low,Medium,22959.6,Medium,Medium Risk
+Education,2000000,Low,Low,Low,172574.17,Small,High Risk
+Education,300000,Medium,Medium,Medium,50417.7,Small,Medium Risk
+Manufacturing,500000,High,Medium,High,46951.05,Medium,Low Risk
+Food & Beverage,1000000,High,Medium,Low,146955.67,Small,High Risk
+Technology,1500000,Medium,Medium,Low,116806.82,Large,Medium Risk
+Manufacturing,50000,Medium,Low,High,3677.51,Small,Low Risk
+Technology,50000,Medium,High,High,4564.21,Medium,Medium Risk
+Education,500000,High,Medium,Medium,74427.39,Medium,Medium Risk
+Manufacturing,25000,Medium,Medium,Medium,1484.83,Medium,Medium Risk
+Services,100000,Low,Medium,Low,12113.45,Small,High Risk
+E-commerce,750000,Medium,High,Medium,180613.04,Medium,High Risk
+Services,200000,Low,High,High,48209.45,Large,High Risk
+Food & Beverage,1500000,High,Low,Low,293456.63,Small,High Risk
+Retail,750000,Low,Low,Low,182654.91,Medium,High Risk
+Food & Beverage,100000,Medium,High,High,20800.27,Small,Medium Risk
+Technology,1000000,High,Medium,High,194820.67,Medium,Medium Risk
+Fashion & Clothing,1500000,High,Medium,Medium,90478.74,Medium,High Risk
+Technology,300000,High,Low,Low,40305.76,Small,Medium Risk
+Food & Beverage,200000,High,Medium,High,11480.31,Large,Medium Risk
+Manufacturing,50000,High,Medium,Medium,6544.85,Large,Low Risk
+Education,1000000,Medium,High,Low,175178.28,Small,High Risk
+Education,100000,High,Low,High,15578.74,Large,Low Risk
+E-commerce,750000,Low,Low,Low,43139.52,Small,High Risk
+Retail,2000000,Low,Medium,Medium,392908.72,Small,High Risk
+E-commerce,1000000,Medium,Medium,Low,58418.64,Small,High Risk
+Services,2000000,High,Medium,Medium,492932.21,Large,Medium Risk
+Technology,1000000,Medium,Medium,Low,248233.73,Large,High Risk
+Technology,300000,High,Low,Low,38045.44,Small,Medium Risk
+Retail,2000000,High,Medium,Low,487641.05,Small,High Risk
+Retail,2000000,Medium,Medium,High,458974.46,Large,Medium Risk
+Technology,1000000,High,Low,High,222025.36,Large,Low Risk
+Services,1500000,Low,High,Low,173715.41,Small,High Risk
+Manufacturing,50000,Medium,Medium,Low,9734.2,Medium,High Risk
+Fashion & Clothing,300000,High,Low,High,45964.74,Large,Low Risk
+Food & Beverage,100000,Medium,High,Medium,10340.57,Medium,High Risk
+Services,25000,Low,Low,Low,2443.45,Small,High Risk
+Food & Beverage,200000,Medium,High,Low,45234.83,Medium,High Risk
+Food & Beverage,2000000,High,Low,High,100448.04,Medium,Low Risk
+Technology,750000,Low,Low,Low,121476.65,Large,High Risk
+E-commerce,750000,Medium,High,Low,132393.28,Medium,High Risk
+Manufacturing,500000,High,High,Low,55096.36,Small,High Risk
+Technology,25000,Low,Low,High,6200.74,Large,Medium Risk
+Manufacturing,200000,Medium,Medium,Medium,12625.05,Small,Medium Risk
+E-commerce,2000000,Low,Low,Medium,477721.45,Large,Medium Risk
+Manufacturing,1500000,Low,High,Medium,141230.88,Medium,High Risk
+E-commerce,100000,High,Low,Medium,23872.32,Small,Medium Risk
+E-commerce,200000,Medium,Medium,High,26373.36,Medium,Medium Risk
+Fashion & Clothing,25000,High,Medium,High,3616.05,Medium,Low Risk
+Retail,25000,Low,Low,Medium,3901.77,Large,Low Risk
+Manufacturing,1000000,High,Medium,High,146304.47,Medium,Medium Risk
+Education,25000,Medium,Low,Medium,2377.7,Large,Low Risk
+Food & Beverage,1000000,Medium,High,Low,142919.72,Medium,High Risk
+Fashion & Clothing,50000,Medium,Medium,Low,9449.82,Small,High Risk
+Retail,25000,Low,Medium,Low,3661.78,Small,High Risk
+Food & Beverage,1000000,Low,Medium,Medium,67573.3,Small,High Risk
+Technology,750000,Low,High,High,43677.52,Small,High Risk
+Fashion & Clothing,100000,High,Medium,Medium,17258.88,Small,Medium Risk
+Food & Beverage,200000,Medium,High,Low,45792.67,Medium,High Risk
+Food & Beverage,500000,Medium,Medium,Medium,98158.95,Large,Medium Risk
+Services,1500000,High,Low,High,176068.74,Small,Medium Risk
+Education,300000,High,Medium,Medium,58152.11,Medium,Medium Risk
+E-commerce,100000,Low,Medium,Low,13368.0,Large,Medium Risk
+Retail,750000,Medium,High,Medium,148905.98,Small,High Risk
+Services,1000000,Medium,Medium,Medium,55878.89,Medium,Medium Risk
+Fashion & Clothing,200000,High,High,Medium,21073.11,Large,Medium Risk
+E-commerce,50000,Medium,High,Low,9658.25,Medium,Medium Risk
+Education,2000000,Low,High,Low,441754.04,Small,High Risk
+Manufacturing,1000000,Medium,High,Low,180424.65,Small,High Risk
+Retail,50000,High,Low,Medium,8487.14,Small,Low Risk
+Food & Beverage,100000,Medium,Medium,Medium,18387.81,Small,Medium Risk
+Retail,300000,Low,Medium,Medium,25022.51,Small,Medium Risk
+Services,300000,High,High,Medium,66852.97,Medium,High Risk
+Services,200000,Medium,Low,Medium,47464.23,Small,Medium Risk
+Manufacturing,300000,Low,Low,Medium,56292.47,Small,High Risk
+Food & Beverage,1000000,High,Low,Low,244619.55,Large,Medium Risk
+Food & Beverage,750000,High,Low,Low,83689.49,Medium,Low Risk
+Food & Beverage,750000,Low,Low,Medium,60924.58,Medium,High Risk
+Food & Beverage,25000,High,High,Medium,3735.87,Small,Medium Risk
+Food & Beverage,1000000,High,High,Low,209102.07,Small,High Risk
+Technology,300000,High,Medium,Low,24557.25,Medium,Medium Risk
+Education,1500000,High,High,High,102144.51,Large,Medium Risk
+Manufacturing,500000,Medium,High,High,101228.51,Small,High Risk
+Education,100000,High,Medium,Low,17981.49,Small,Medium Risk
+Education,300000,Medium,Medium,Medium,47741.21,Large,Medium Risk
+Services,500000,Low,Medium,Medium,86949.03,Medium,High Risk
+Fashion & Clothing,50000,Medium,Low,Low,6301.96,Medium,Medium Risk
+Fashion & Clothing,300000,Low,Medium,Medium,47964.85,Medium,High Risk
+E-commerce,100000,Low,High,Medium,7028.42,Small,High Risk
+Services,300000,Medium,Medium,High,47349.68,Medium,High Risk
+Retail,200000,High,Medium,Low,44376.63,Large,Medium Risk
+Manufacturing,750000,Medium,High,Low,175162.87,Medium,High Risk
+Fashion & Clothing,2000000,Low,Low,Medium,306070.07,Small,High Risk
+Food & Beverage,1500000,Medium,Low,Medium,346767.33,Small,High Risk
+Food & Beverage,1000000,High,Medium,Medium,69107.06,Medium,Medium Risk
+Retail,750000,Medium,Low,Medium,166919.56,Large,Medium Risk
+Manufacturing,100000,Medium,Medium,Low,12818.12,Small,High Risk
+Retail,1500000,High,Low,Medium,196295.63,Medium,High Risk
+E-commerce,750000,Medium,High,Medium,88084.07,Large,High Risk
+Manufacturing,200000,Low,High,Low,22934.86,Large,High Risk
+Manufacturing,25000,High,High,Low,4450.84,Medium,Medium Risk
+Fashion & Clothing,50000,High,Low,Medium,4403.25,Medium,Medium Risk
+Technology,200000,Low,Medium,High,17012.12,Large,Medium Risk
+Education,1500000,Low,Medium,Medium,321541.93,Small,Medium Risk
+Education,100000,Low,High,High,15799.14,Small,Medium Risk
+Technology,300000,Low,Medium,High,66881.17,Small,High Risk
+Food & Beverage,200000,Medium,Medium,Medium,13505.71,Large,Medium Risk
+Retail,1500000,Medium,High,Low,357716.11,Medium,High Risk
+E-commerce,500000,Medium,Medium,Medium,64717.88,Medium,Medium Risk
+Food & Beverage,100000,High,Medium,Medium,7825.56,Large,Low Risk
+Manufacturing,100000,Low,High,Low,24512.2,Medium,High Risk
+Retail,50000,Low,High,High,7370.62,Medium,Medium Risk
+Technology,1500000,High,Low,Medium,226832.27,Large,Medium Risk
+Services,200000,Medium,Low,Medium,18641.53,Medium,Low Risk
+Education,100000,Medium,Low,Low,14692.03,Medium,Medium Risk
+Manufacturing,1000000,Medium,Medium,Low,64925.96,Medium,High Risk
+Fashion & Clothing,25000,Medium,High,High,4326.1,Small,Medium Risk
+Services,200000,Medium,Medium,Low,45464.17,Medium,Medium Risk
+E-commerce,500000,High,High,High,26103.13,Medium,Medium Risk
+Technology,300000,Low,Medium,High,23226.58,Large,Low Risk
+Food & Beverage,50000,Medium,Low,Low,2926.33,Small,High Risk
+E-commerce,25000,Medium,Medium,High,1740.41,Medium,Medium Risk
+E-commerce,1500000,Medium,High,Medium,361866.66,Small,High Risk
+Retail,25000,High,High,High,1632.08,Small,Medium Risk
+E-commerce,750000,High,High,Medium,129590.04,Large,High Risk
+Fashion & Clothing,100000,Low,High,Medium,5956.62,Small,High Risk
+E-commerce,1000000,Low,Low,Medium,127519.05,Large,High Risk
+Technology,200000,Medium,High,Medium,17407.82,Large,High Risk
+Technology,1000000,Medium,Low,Low,243572.01,Large,Medium Risk
+Fashion & Clothing,1000000,Medium,Medium,Low,74277.28,Medium,High Risk
+Retail,2000000,Medium,High,Low,150093.43,Large,High Risk
+Fashion & Clothing,50000,Medium,Medium,Medium,10617.7,Medium,Medium Risk
+Fashion & Clothing,50000,Low,Medium,Medium,6894.05,Small,Medium Risk
+Food & Beverage,500000,Medium,High,Medium,74604.78,Small,Medium Risk
+Fashion & Clothing,750000,High,Medium,Medium,132910.61,Medium,High Risk
+Manufacturing,1000000,High,Medium,Low,60771.64,Medium,Medium Risk
+Services,50000,Low,High,Low,12151.3,Large,High Risk
+E-commerce,750000,High,High,Medium,126052.15,Large,High Risk
+Manufacturing,750000,Medium,High,Medium,61627.23,Medium,Medium Risk
+Fashion & Clothing,1000000,Low,High,High,69835.62,Medium,High Risk
+Manufacturing,750000,Medium,High,Medium,118304.35,Medium,High Risk
+Food & Beverage,2000000,High,High,Low,399818.19,Small,High Risk
+E-commerce,750000,Medium,Medium,Low,95306.38,Medium,High Risk
+Fashion & Clothing,500000,Medium,Medium,Medium,94561.81,Small,Medium Risk
+Retail,750000,High,Medium,Medium,53120.6,Medium,Medium Risk
+Education,200000,Medium,Medium,Medium,42199.56,Large,Medium Risk
+Fashion & Clothing,2000000,High,High,Medium,276079.6,Medium,High Risk
+Education,25000,Medium,Low,Low,4241.13,Large,Medium Risk
+Technology,25000,Medium,Medium,High,1841.68,Medium,Medium Risk
+Education,750000,Medium,Medium,Low,91835.32,Medium,High Risk
+Technology,500000,Medium,Medium,Low,119067.92,Medium,Medium Risk
+E-commerce,2000000,High,High,Low,421057.32,Medium,High Risk
+Food & Beverage,200000,Low,High,High,41208.52,Medium,High Risk
+Retail,500000,Low,Low,Medium,117262.31,Small,Medium Risk
+Services,750000,Low,High,Low,78292.46,Medium,High Risk
+Education,2000000,High,Medium,Low,441235.85,Large,High Risk
+Retail,750000,Low,Low,Medium,119748.09,Large,Medium Risk
+Fashion & Clothing,750000,Medium,High,High,131163.82,Small,Medium Risk
+Fashion & Clothing,25000,Medium,High,Medium,2997.53,Small,High Risk
+Retail,50000,High,Medium,Low,9337.54,Small,Medium Risk
+Food & Beverage,2000000,Medium,High,Medium,345160.06,Medium,High Risk
+Technology,50000,Medium,Low,High,10999.75,Medium,Medium Risk
+Services,1000000,High,Low,Medium,245612.36,Large,Medium Risk
+Education,25000,Low,Medium,Low,2901.08,Medium,High Risk
+Services,1500000,Medium,High,Medium,240754.08,Medium,High Risk
+E-commerce,1000000,Medium,Medium,High,124386.53,Large,Medium Risk
+E-commerce,300000,High,Low,Medium,32228.28,Small,Medium Risk
+Services,300000,Medium,High,Medium,69905.4,Medium,High Risk
+Services,50000,Medium,High,High,5269.04,Medium,Medium Risk
+Retail,25000,Low,Medium,Medium,5351.89,Small,High Risk
+Technology,100000,High,High,Medium,24342.53,Large,Low Risk
+Manufacturing,750000,Low,High,Low,187061.72,Medium,High Risk
+E-commerce,300000,Medium,Medium,Medium,68415.48,Medium,Medium Risk
+Technology,300000,High,Medium,Low,70092.48,Medium,Medium Risk
+E-commerce,50000,High,Medium,Medium,7442.12,Large,Medium Risk
+Services,2000000,Low,Low,Low,387630.98,Large,High Risk
+Education,50000,High,High,Medium,6023.75,Small,Medium Risk
+Services,100000,Low,High,Low,11298.39,Large,High Risk
+Services,25000,High,Medium,Medium,4720.75,Small,Medium Risk
+Education,500000,Medium,Low,High,65830.63,Medium,Low Risk
+Retail,100000,Low,High,Medium,22484.53,Large,High Risk
+Education,50000,Medium,Medium,High,7966.48,Large,Medium Risk
+E-commerce,200000,Low,Medium,Low,48649.74,Medium,High Risk
+Fashion & Clothing,1500000,Medium,High,High,316472.03,Small,High Risk
+Services,100000,High,Low,Medium,15813.97,Small,Low Risk
+Technology,1500000,Low,Medium,Low,254507.25,Large,High Risk
+Retail,200000,Low,High,High,23216.32,Medium,Medium Risk
+Retail,1000000,Low,Low,Low,208915.66,Medium,Medium Risk
+Technology,50000,Medium,High,Low,4702.25,Small,High Risk
+Manufacturing,1500000,High,High,High,338693.67,Small,Medium Risk
+E-commerce,2000000,Low,Low,High,278098.44,Small,Medium Risk
+Manufacturing,100000,Low,Medium,Low,12690.23,Small,High Risk
+Retail,25000,Medium,Medium,High,1264.61,Small,Low Risk
+Services,500000,Low,Low,Low,122153.27,Small,High Risk
+Technology,100000,Medium,Medium,Medium,15740.15,Small,Medium Risk
+Technology,25000,Low,Low,Low,2944.3,Small,Medium Risk
+Food & Beverage,500000,High,Medium,Low,86706.65,Small,Medium Risk
+E-commerce,750000,Medium,Low,Medium,44228.04,Large,Medium Risk
+Retail,1000000,Medium,Medium,High,192806.53,Small,Medium Risk
+Fashion & Clothing,25000,High,High,High,1257.83,Large,Low Risk
+Services,25000,Medium,Medium,Low,3344.74,Small,High Risk
+Retail,2000000,Medium,High,Medium,358438.47,Medium,High Risk
+Food & Beverage,50000,Low,Low,Low,4218.48,Medium,Medium Risk
+E-commerce,300000,High,Low,Medium,23528.23,Small,Medium Risk
+E-commerce,25000,Low,Medium,High,5290.11,Large,Medium Risk
+Education,1500000,High,High,High,282747.85,Medium,Medium Risk
+Retail,300000,High,Medium,Low,38054.38,Large,Medium Risk
+Services,1500000,Medium,Medium,Medium,186351.73,Small,High Risk
+Fashion & Clothing,750000,Medium,Low,Medium,44216.77,Small,Medium Risk
+Retail,200000,Medium,Medium,Medium,10268.42,Large,Medium Risk
+Retail,25000,High,Medium,Medium,2339.46,Medium,Low Risk
+Retail,200000,Low,High,Low,49098.08,Large,High Risk
+E-commerce,500000,High,Medium,Medium,56320.63,Small,Medium Risk
+Education,300000,Medium,High,Low,72355.13,Small,Medium Risk
+Food & Beverage,1500000,High,Medium,High,191844.57,Small,Medium Risk
+Fashion & Clothing,500000,Medium,Low,Medium,79170.48,Medium,Medium Risk
+E-commerce,2000000,High,High,Low,302978.55,Large,High Risk
+Services,300000,High,Medium,Low,49828.06,Small,High Risk
+E-commerce,200000,Medium,High,High,34936.24,Small,Medium Risk
+Fashion & Clothing,2000000,Medium,High,Low,441023.11,Small,High Risk
+Fashion & Clothing,300000,Medium,Medium,Medium,17278.89,Medium,Medium Risk
+E-commerce,750000,Low,High,Low,169063.59,Medium,High Risk
+Fashion & Clothing,200000,High,Medium,Medium,21431.34,Small,Medium Risk
+Technology,1000000,Medium,Medium,High,122453.62,Small,High Risk
+Education,200000,High,Medium,High,12378.86,Small,Medium Risk
+Retail,25000,High,High,Low,5667.32,Large,Medium Risk
+Food & Beverage,500000,High,High,Medium,38443.51,Medium,Medium Risk
+Manufacturing,50000,Medium,High,Medium,10433.94,Large,Medium Risk
+Education,100000,High,High,Medium,7857.01,Small,Medium Risk
+Services,1500000,High,High,Medium,101581.41,Small,High Risk
+Services,500000,Medium,Medium,Medium,82704.07,Medium,High Risk
+Manufacturing,100000,Medium,Medium,Low,15012.49,Medium,Medium Risk
+Food & Beverage,50000,High,High,Low,11134.01,Large,Low Risk
+Fashion & Clothing,750000,High,Medium,High,85724.36,Small,Medium Risk
+Technology,300000,Low,Low,Medium,60576.69,Large,High Risk
+Retail,750000,Medium,Medium,Medium,131217.58,Medium,High Risk
+Services,300000,High,Medium,Medium,23572.56,Large,Low Risk
+Fashion & Clothing,50000,Medium,Low,High,10737.78,Large,Low Risk
+Fashion & Clothing,500000,High,Low,High,25381.99,Small,Low Risk
+Services,1500000,Low,High,High,113978.98,Small,High Risk
+Services,50000,High,Medium,High,6273.18,Large,Low Risk
+Manufacturing,25000,High,Medium,Medium,4413.56,Large,Medium Risk
+Retail,1000000,High,High,Medium,109610.44,Small,High Risk
+Services,100000,Medium,High,Low,14971.42,Large,Low Risk
+Education,50000,Medium,High,Low,11089.57,Small,High Risk
+Food & Beverage,300000,High,High,Low,54441.21,Large,High Risk
+Services,750000,Medium,Medium,Low,135245.96,Medium,High Risk
+E-commerce,500000,Medium,Medium,Medium,44921.53,Small,Medium Risk
+Retail,25000,Low,Medium,Low,5427.4,Medium,Medium Risk
+Manufacturing,300000,High,High,Medium,71930.76,Large,Low Risk
+Retail,500000,Medium,High,High,29165.68,Medium,Medium Risk
+Technology,25000,Medium,High,High,3856.48,Medium,Medium Risk
+Food & Beverage,1500000,Low,Medium,Low,162992.58,Small,High Risk
+Education,2000000,Low,Medium,Medium,327237.0,Small,High Risk
+Education,100000,Low,High,High,20607.52,Small,High Risk
+Technology,200000,High,High,High,34131.67,Small,Medium Risk
+Food & Beverage,200000,High,High,High,49653.12,Medium,High Risk
+E-commerce,500000,Medium,Low,Low,39080.29,Medium,Medium Risk
+E-commerce,300000,Medium,High,Low,53569.13,Small,High Risk
+Retail,200000,Medium,High,Medium,12425.16,Medium,Medium Risk
+Food & Beverage,500000,Medium,Low,Medium,92962.03,Small,Medium Risk
+Technology,500000,High,High,Medium,43030.79,Large,Medium Risk
+E-commerce,25000,Low,High,Medium,3209.29,Medium,High Risk
+Retail,200000,High,High,Medium,49245.75,Small,Medium Risk
+Food & Beverage,100000,Low,Low,Low,5283.8,Large,Medium Risk
+Manufacturing,50000,High,Medium,High,12170.53,Small,Low Risk
+Services,25000,Medium,High,High,5067.9,Small,Medium Risk
+Technology,1500000,High,High,Medium,240597.09,Large,Medium Risk
+Services,1000000,High,High,Low,135740.4,Small,High Risk
+Manufacturing,100000,High,Low,High,8076.14,Large,Low Risk
+Manufacturing,100000,Low,Medium,Low,17440.79,Small,Medium Risk
+Services,200000,Medium,Medium,High,46089.46,Medium,Low Risk
+Retail,300000,Low,Low,High,31948.72,Small,Medium Risk
+Services,300000,High,Medium,Medium,34580.31,Large,Low Risk
+Education,750000,High,High,Medium,154554.83,Medium,Medium Risk
+Services,50000,Low,Medium,Low,5815.65,Large,High Risk
+E-commerce,200000,Medium,High,Medium,13802.12,Large,Medium Risk
+Fashion & Clothing,200000,High,High,Medium,16063.8,Small,Medium Risk
+Services,750000,High,Medium,Medium,117303.25,Small,Medium Risk
+Retail,500000,Medium,High,Low,45357.84,Small,High Risk
+E-commerce,500000,High,High,Low,91304.72,Large,Medium Risk
+Retail,300000,High,Medium,High,64081.6,Large,Low Risk
+Fashion & Clothing,500000,Medium,Low,High,79247.1,Small,Medium Risk
+Fashion & Clothing,750000,Medium,High,Low,154594.76,Small,High Risk
+Technology,1500000,Medium,High,Medium,113982.41,Small,High Risk
+Technology,25000,Medium,Medium,Medium,5914.62,Medium,Medium Risk
+E-commerce,500000,High,High,Medium,111169.09,Small,High Risk
+Food & Beverage,1500000,Low,Medium,Low,368557.64,Large,High Risk
+Fashion & Clothing,750000,Medium,Medium,Medium,113500.9,Medium,High Risk
+Retail,100000,High,Low,High,17318.24,Medium,Low Risk
+E-commerce,100000,High,Medium,Medium,13591.92,Small,Medium Risk
+E-commerce,500000,Low,High,Medium,120246.71,Large,High Risk
+Education,200000,Medium,Medium,High,30060.62,Large,Medium Risk
+Technology,1000000,High,High,High,175598.68,Small,Medium Risk
+E-commerce,300000,Medium,Medium,Low,58961.94,Medium,High Risk
+Manufacturing,500000,Low,Medium,Low,58346.26,Medium,High Risk
+Education,750000,High,Medium,Medium,132342.32,Medium,Medium Risk
+Education,100000,High,Medium,High,11505.08,Large,Low Risk
+Food & Beverage,2000000,Low,High,Low,261440.4,Small,High Risk
+Food & Beverage,2000000,Medium,Low,Medium,129616.89,Large,Medium Risk
+Fashion & Clothing,50000,Medium,High,High,8536.37,Large,Low Risk
+E-commerce,500000,Low,Medium,Medium,70802.22,Large,Medium Risk
+Food & Beverage,500000,High,Medium,Medium,95662.99,Medium,Medium Risk
+Retail,200000,Low,Low,Low,14682.64,Small,High Risk
+E-commerce,1000000,Medium,High,Medium,131630.34,Small,High Risk
+Manufacturing,200000,High,Medium,High,18819.35,Small,Medium Risk
+Fashion & Clothing,500000,High,Low,Low,68358.28,Large,Medium Risk
+Services,300000,High,Medium,Low,41064.2,Small,High Risk
+Retail,2000000,High,Low,Medium,427347.83,Large,Low Risk
+Fashion & Clothing,200000,Low,Low,Low,20832.25,Medium,High Risk
+E-commerce,2000000,Medium,Medium,Medium,233213.95,Medium,Medium Risk
+Technology,100000,Medium,Medium,High,12948.96,Medium,Medium Risk
+Technology,1000000,Low,Medium,High,166889.78,Small,High Risk
+Education,25000,High,High,High,1425.04,Large,Medium Risk
+E-commerce,500000,Medium,Medium,Medium,118628.06,Medium,Medium Risk
+Food & Beverage,500000,High,Medium,Low,84023.27,Large,Medium Risk
+Services,25000,High,Medium,Medium,2551.18,Medium,Low Risk
+Manufacturing,300000,High,High,Medium,58233.93,Large,Medium Risk
+Manufacturing,25000,Medium,Low,Medium,3927.77,Small,Medium Risk
+Manufacturing,2000000,High,High,Low,465515.38,Small,High Risk
+Food & Beverage,2000000,High,High,Low,257092.3,Large,Medium Risk
+Manufacturing,100000,Medium,Medium,High,22687.53,Large,Low Risk
+Education,500000,Medium,Medium,Medium,97192.92,Large,Medium Risk
+Fashion & Clothing,750000,Medium,High,High,117283.36,Medium,High Risk
+Technology,25000,Medium,High,High,1857.48,Large,Low Risk
+Services,100000,Low,Medium,Medium,9907.05,Large,Medium Risk
+Technology,1000000,Medium,Medium,Medium,135788.87,Large,Medium Risk
+E-commerce,2000000,Medium,High,Low,231020.87,Small,High Risk
+Fashion & Clothing,25000,Medium,High,Medium,6152.18,Small,High Risk
+Education,300000,High,High,High,72086.52,Small,Medium Risk
+Education,300000,Low,High,High,58878.99,Small,High Risk
+Fashion & Clothing,1000000,High,High,High,147018.93,Large,Medium Risk
+Manufacturing,100000,High,Medium,Medium,5267.35,Medium,Low Risk
+Technology,1500000,High,High,Low,95092.08,Medium,High Risk
+Fashion & Clothing,200000,High,Medium,High,28019.14,Small,Medium Risk
+Manufacturing,500000,Medium,High,Medium,57116.22,Large,High Risk
+Fashion & Clothing,750000,Medium,Medium,Medium,136009.42,Large,Medium Risk
+Fashion & Clothing,50000,High,Medium,Low,10544.95,Small,Low Risk
+Food & Beverage,300000,Medium,Medium,Medium,60510.11,Large,High Risk
+Manufacturing,100000,Medium,High,Low,8899.5,Medium,High Risk
+Education,100000,Medium,High,High,15832.93,Medium,Medium Risk
+Food & Beverage,2000000,Medium,High,Medium,335401.97,Small,High Risk
+Technology,2000000,Medium,Low,Low,378462.46,Large,Medium Risk
+Food & Beverage,750000,High,High,Low,141353.84,Large,High Risk
+Manufacturing,25000,Medium,High,Medium,2642.29,Large,Medium Risk
+Services,750000,Medium,High,High,154203.79,Large,High Risk
+Retail,1000000,Low,Medium,Low,225837.15,Large,High Risk
+Education,300000,Medium,High,High,40739.1,Medium,Medium Risk
+Manufacturing,750000,High,High,High,74851.31,Medium,High Risk
+Manufacturing,500000,Low,High,Low,99818.39,Small,High Risk
+Services,300000,High,Medium,Low,54260.52,Large,Medium Risk
+Technology,500000,Low,High,Medium,55895.6,Large,High Risk
+E-commerce,100000,Medium,High,Medium,16619.01,Small,High Risk
+Manufacturing,100000,Medium,High,Medium,9577.51,Large,Medium Risk
+Food & Beverage,750000,Medium,Medium,Medium,103958.9,Medium,High Risk
+Services,500000,High,High,Medium,30334.8,Large,Medium Risk
+Technology,50000,Low,High,Medium,3043.91,Large,High Risk
+Education,1500000,Medium,Medium,Low,265782.1,Small,High Risk
+Technology,50000,High,High,Low,2691.45,Small,Medium Risk
+Education,1000000,High,High,Medium,147699.13,Medium,High Risk
+Retail,500000,Medium,Low,Medium,34490.84,Large,Medium Risk
+Technology,200000,Low,Medium,Low,34273.88,Large,High Risk
+Education,1000000,Low,High,Low,210528.06,Large,High Risk
+E-commerce,200000,Low,High,Medium,34759.66,Large,High Risk
+Education,25000,High,High,Low,4009.39,Medium,Medium Risk
+Food & Beverage,750000,Low,Low,Medium,77784.33,Medium,High Risk
+Services,100000,High,Low,Low,5174.12,Large,Low Risk
+Fashion & Clothing,1000000,Low,Low,High,123119.14,Small,High Risk
+Technology,300000,Medium,High,Low,33701.39,Medium,High Risk
+Education,25000,Medium,High,Medium,4825.93,Small,Medium Risk
+Manufacturing,1500000,Medium,High,High,333660.89,Large,Medium Risk
+Education,750000,High,High,High,93220.09,Large,Low Risk
+Retail,500000,High,Medium,High,65680.48,Large,Medium Risk
+Education,200000,Medium,Medium,High,45595.35,Small,Medium Risk
+Retail,2000000,High,Medium,High,472929.1,Small,Medium Risk
+Fashion & Clothing,500000,Low,High,Low,110426.08,Large,High Risk
+Technology,500000,High,Medium,Low,62454.82,Large,Medium Risk
+Food & Beverage,100000,High,Medium,Medium,16464.46,Small,Medium Risk
+Retail,300000,High,Low,Low,15039.2,Large,Low Risk
+Food & Beverage,50000,Low,Medium,Low,5153.7,Small,High Risk
+Food & Beverage,1000000,High,Low,Low,91508.19,Medium,Medium Risk
+Education,750000,Low,High,Medium,129788.05,Medium,High Risk
+Education,50000,Medium,High,Low,2804.64,Small,Medium Risk
+Fashion & Clothing,750000,Medium,Low,Medium,107749.53,Large,Medium Risk
+Technology,25000,High,High,High,5230.04,Large,Low Risk
+Food & Beverage,1500000,Medium,Medium,High,349489.76,Large,Medium Risk
+Fashion & Clothing,2000000,Medium,High,Low,409108.57,Medium,High Risk
+Manufacturing,300000,Medium,High,Medium,18969.91,Small,High Risk
+Fashion & Clothing,1500000,Medium,Medium,Low,174661.67,Medium,High Risk
+Education,1000000,High,Medium,Medium,185699.99,Medium,High Risk
+Manufacturing,100000,Medium,Medium,High,11795.4,Small,Low Risk
+Services,2000000,High,High,Medium,496043.54,Medium,Medium Risk
+Fashion & Clothing,25000,Low,High,Medium,6174.23,Medium,High Risk
+Services,500000,Low,Low,Low,84521.28,Large,Medium Risk
+Food & Beverage,100000,Low,Medium,Medium,20023.54,Medium,Medium Risk
+E-commerce,100000,Medium,Low,High,20684.12,Large,Low Risk
+Food & Beverage,50000,High,Medium,High,5450.72,Large,Low Risk
+Fashion & Clothing,25000,Medium,High,High,4268.98,Small,Medium Risk
+Manufacturing,25000,Low,High,High,1935.45,Large,Medium Risk
+Technology,1500000,Low,Low,Medium,345723.91,Large,High Risk
+Manufacturing,100000,Medium,High,High,12990.38,Small,Medium Risk
+Services,25000,Low,Medium,High,1743.69,Small,Medium Risk
+Manufacturing,500000,Low,Low,Medium,98886.67,Large,Medium Risk
+Technology,750000,Low,Medium,Low,178247.36,Medium,High Risk
+Education,2000000,Medium,Medium,Low,121106.1,Small,High Risk
+Education,500000,Low,Medium,Low,82763.18,Medium,High Risk
+Technology,500000,High,High,Low,30178.59,Medium,High Risk
+Food & Beverage,25000,High,Medium,High,4078.44,Medium,Medium Risk
+Technology,25000,Medium,Low,Low,4646.0,Medium,Medium Risk
+Retail,750000,Medium,Low,Medium,98662.22,Medium,High Risk
+Services,25000,High,High,Low,2445.71,Large,High Risk
+E-commerce,100000,Low,Medium,Medium,13064.16,Small,High Risk
+Food & Beverage,25000,Medium,High,Medium,3938.91,Small,Medium Risk
+Fashion & Clothing,200000,Medium,Low,High,16251.35,Medium,Low Risk
+Fashion & Clothing,1500000,Medium,High,Low,214383.95,Large,High Risk
+Food & Beverage,1500000,Medium,Low,Low,87915.72,Small,High Risk
+E-commerce,750000,High,Medium,High,102195.26,Small,Medium Risk
+Education,500000,Medium,High,Medium,76409.54,Small,High Risk
+Fashion & Clothing,100000,High,High,Medium,11486.92,Small,Medium Risk
+Retail,100000,Medium,High,High,23935.12,Medium,Medium Risk
+E-commerce,2000000,Low,Medium,Medium,375218.22,Small,High Risk
+E-commerce,1500000,Low,Low,High,200954.61,Large,Medium Risk
+Manufacturing,1000000,Medium,High,High,66825.53,Medium,High Risk
+Technology,750000,High,Low,Low,87843.49,Medium,Medium Risk
+Fashion & Clothing,50000,High,Medium,Low,2893.92,Small,Medium Risk
+E-commerce,50000,High,High,High,10316.15,Large,Low Risk
+Services,200000,High,Medium,Low,38377.55,Large,Medium Risk
+Fashion & Clothing,750000,Low,Medium,Low,51479.42,Small,High Risk
+Manufacturing,25000,Low,High,High,1726.8,Medium,Medium Risk
+Manufacturing,300000,Low,Low,High,18077.63,Small,Low Risk
+Services,200000,Low,Medium,High,40406.44,Small,Medium Risk
+Services,1500000,Medium,Medium,Medium,278909.17,Small,High Risk
+E-commerce,750000,High,Low,High,89222.64,Large,Medium Risk
+Services,1500000,Low,Medium,Low,276715.15,Small,High Risk
+Food & Beverage,50000,Low,High,Medium,3320.24,Small,Medium Risk
+Services,50000,Low,Medium,Medium,3672.8,Medium,High Risk
+Retail,300000,High,Medium,Medium,52163.4,Medium,Medium Risk
+Food & Beverage,50000,Medium,Medium,High,4515.28,Small,Low Risk
+E-commerce,750000,Low,Medium,Medium,75537.62,Small,High Risk
+Retail,25000,High,High,High,4262.35,Large,Medium Risk
+Services,100000,High,Medium,Medium,18650.65,Medium,Medium Risk
+Technology,200000,Medium,High,Low,37694.17,Small,High Risk
+Food & Beverage,300000,High,Low,Low,57083.0,Large,Medium Risk
+Retail,50000,Low,Medium,Medium,3763.86,Medium,Medium Risk
+Services,200000,Low,Medium,Medium,48612.11,Small,High Risk
+Education,300000,Medium,Medium,Medium,19163.65,Medium,Medium Risk
+Technology,1000000,High,High,Medium,206953.94,Small,High Risk
+Services,1000000,High,High,Medium,239184.93,Large,High Risk
+Fashion & Clothing,300000,High,Medium,Medium,15974.61,Medium,Medium Risk
+Services,25000,High,Medium,Low,1922.88,Small,Medium Risk
+Services,750000,High,High,Low,37504.61,Large,High Risk
+E-commerce,25000,Medium,Low,Low,5326.38,Small,Medium Risk
+Retail,500000,High,Medium,Medium,123883.55,Large,Medium Risk
+Retail,1000000,Low,Medium,Low,85379.39,Large,High Risk
+Technology,2000000,Low,High,Medium,228010.93,Small,High Risk
+Education,25000,Medium,High,Medium,2826.2,Large,High Risk
+Manufacturing,200000,High,High,High,29998.36,Medium,Medium Risk
+E-commerce,1500000,Medium,Medium,Medium,329987.8,Large,High Risk
+Food & Beverage,100000,Medium,Medium,Medium,6720.64,Large,Low Risk
+Fashion & Clothing,750000,High,Medium,Low,44713.85,Medium,High Risk
+Technology,200000,Medium,Medium,High,42396.98,Large,Medium Risk
+Services,500000,High,Low,High,124656.57,Medium,Low Risk
+E-commerce,300000,Medium,High,High,73510.8,Small,High Risk
+Technology,500000,Medium,High,Medium,100625.38,Medium,Medium Risk
+Retail,750000,High,Medium,Medium,89343.75,Small,Medium Risk
+Technology,100000,Low,Low,Low,14986.06,Large,Low Risk
+Manufacturing,1000000,High,Low,Medium,173285.64,Medium,Medium Risk
+Services,2000000,Low,High,High,359506.15,Medium,High Risk
+Retail,750000,Medium,Low,High,82104.23,Small,Medium Risk
+Services,50000,Low,Medium,Medium,4649.17,Large,Medium Risk
+E-commerce,1000000,Medium,High,Medium,65856.06,Large,High Risk
+Fashion & Clothing,1500000,Medium,Medium,Low,120433.66,Large,High Risk
+Education,2000000,Medium,Medium,Low,226004.15,Medium,Medium Risk
+Services,200000,High,Medium,High,14973.83,Medium,Medium Risk
+Fashion & Clothing,500000,Medium,Medium,High,26049.36,Medium,Low Risk
+Retail,2000000,High,High,Low,493008.51,Small,High Risk
+Food & Beverage,200000,Low,Low,Low,17571.35,Medium,High Risk

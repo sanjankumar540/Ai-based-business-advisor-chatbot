@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}Analytics{% endblock %}
+{% block content %}
+<h2 class="mb-4"><i class="bi bi-bar-chart-line"></i> Business Analytics Dashboard</h2>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-4 col-6">
+    <div class="stat-card">
+      <i class="bi bi-people text-primary"></i>
+      <div class="stat-value">{{ platform_totals.total_users }}</div>
+      <div class="stat-label">Total Users (Platform)</div>
+    </div>
+  </div>
+  <div class="col-md-4 col-6">
+    <div class="stat-card">
+      <i class="bi bi-shield-exclamation text-warning"></i>
+      <div class="stat-value">{{ platform_totals.total_predictions }}</div>
+      <div class="stat-label">Total Predictions (Platform)</div>
+    </div>
+  </div>
+  <div class="col-md-4 col-6">
+    <div class="stat-card">
+      <i class="bi bi-file-earmark-text text-success"></i>
+      <div class="stat-value">{{ platform_totals.total_business_plans }}</div>
+      <div class="stat-label">Business Plans (Platform)</div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-lg-6">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Your Risk Distribution</h5>
+        <canvas id="riskChart" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Your Query Categories</h5>
+        <canvas id="categoryChart" height="220"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Customer Segments (K-Means)</h5>
+        <canvas id="segmentChart" height="220"></canvas>
+        <p class="text-muted small mt-2 mb-0">Based on sample customer dataset (age, income, purchase frequency, spending).</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Segment Averages</h5>
+        <table class="table table-sm">
+          <thead><tr><th>Segment</th><th>Avg Age</th><th>Avg Income</th><th>Avg Spending</th></tr></thead>
+          <tbody>
+            {% for row in segmentation_summary.cluster_stats %}
+            <tr>
+              <td>{{ row.segment }}</td>
+              <td>{{ row.age }}</td>
+              <td>₹{{ "{:,.0f}".format(row.income) }}</td>
+              <td>₹{{ "{:,.0f}".format(row.spending_amount) }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+const riskCounts = {{ risk_counts | tojson }};
+const categoryCounts = {{ category_counts | tojson }};
+const segmentCounts = {{ segmentation_summary.segments | tojson }};
+
+new Chart(document.getElementById('riskChart'), {
+  type: 'doughnut',
+  data: {
+    labels: Object.keys(riskCounts),
+    datasets: [{
+      data: Object.values(riskCounts),
+      backgroundColor: ['#28a745', '#ffc107', '#dc3545']
+    }]
+  },
+  options: { responsive: true }
+});
+
+new Chart(document.getElementById('categoryChart'), {
+  type: 'bar',
+  data: {
+    labels: Object.keys(categoryCounts),
+    datasets: [{
+      label: 'Queries',
+      data: Object.values(categoryCounts),
+      backgroundColor: '#0d6efd'
+    }]
+  },
+  options: { responsive: true, plugins: { legend: { display: false } } }
+});
+
+new Chart(document.getElementById('segmentChart'), {
+  type: 'pie',
+  data: {
+    labels: Object.keys(segmentCounts),
+    datasets: [{
+      data: Object.values(segmentCounts),
+      backgroundColor: ['#6c757d', '#0dcaf0', '#6610f2', '#fd7e14']
+    }]
+  },
+  options: { responsive: true }
+});
+</script>
+{% endblock %}

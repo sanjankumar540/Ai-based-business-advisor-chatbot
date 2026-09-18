@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block title %}Business Analyzer{% endblock %}
+{% block content %}
+<h2 class="mb-1"><i class="bi bi-clipboard-data"></i> Business Analyzer</h2>
+<p class="text-muted mb-4">Enter your business profile for a full feasibility + ML risk + health score analysis.</p>
+
+{% if error_message %}
+<div class="alert alert-danger">{{ error_message }}</div>
+{% endif %}
+
+<div class="row g-4">
+  <div class="col-lg-5">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Business Profile</h5>
+        <form method="POST" action="{{ url_for('analyzer.business_analyzer') }}">
+          <div class="mb-2">
+            <label class="form-label">Business Name *</label>
+            <input type="text" name="business_name" class="form-control" value="{{ form_data.business_name or '' }}" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Business Type *</label>
+            <select name="business_type" class="form-select" required>
+              <option value="">-- Select --</option>
+              {% for bt in business_types %}
+              <option value="{{ bt }}" {{ 'selected' if form_data.business_type == bt }}>{{ bt }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Location</label>
+            <input type="text" name="location" class="form-control" value="{{ form_data.location or '' }}">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Target Customers</label>
+            <input type="text" name="target_customers" class="form-control" value="{{ form_data.target_customers or '' }}">
+          </div>
+
+          <hr>
+          <h6 class="text-muted">Startup Costs</h6>
+          <div class="mb-2">
+            <label class="form-label">Total Startup Cost / Budget (₹) *</label>
+            <input type="number" step="0.01" name="startup_cost" class="form-control" value="{{ form_data.startup_cost or '' }}" required>
+          </div>
+
+          <hr>
+          <h6 class="text-muted">Expected Sales</h6>
+          <div class="row">
+            <div class="col-6 mb-2">
+              <label class="form-label">Avg. Price per Order (₹) *</label>
+              <input type="number" step="0.01" name="expected_price_per_order" class="form-control" value="{{ form_data.expected_price_per_order or '' }}" required>
+            </div>
+            <div class="col-6 mb-2">
+              <label class="form-label">Expected Daily Customers *</label>
+              <input type="number" step="0.01" name="expected_daily_customers" class="form-control" value="{{ form_data.expected_daily_customers or '' }}" required>
+            </div>
+          </div>
+
+          <hr>
+          <h6 class="text-muted">Monthly Expenses</h6>
+          <div class="row">
+            <div class="col-6 mb-2">
+              <label class="form-label">Number of Employees</label>
+              <input type="number" name="num_employees" class="form-control" value="{{ form_data.num_employees or '0' }}">
+            </div>
+            <div class="col-6 mb-2">
+              <label class="form-label">Avg. Cost per Employee (₹/mo)</label>
+              <input type="number" step="0.01" name="avg_employee_cost" class="form-control" value="{{ form_data.avg_employee_cost or '0' }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 mb-2">
+              <label class="form-label">Monthly Rent (₹)</label>
+              <input type="number" step="0.01" name="monthly_rent" class="form-control" value="{{ form_data.monthly_rent or '0' }}">
+            </div>
+            <div class="col-6 mb-2">
+              <label class="form-label">Raw Material Cost (₹/mo)</label>
+              <input type="number" step="0.01" name="raw_material_cost_per_month" class="form-control" value="{{ form_data.raw_material_cost_per_month or '0' }}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 mb-2">
+              <label class="form-label">Marketing Budget (₹/mo)</label>
+              <input type="number" step="0.01" name="marketing_budget_per_month" class="form-control" value="{{ form_data.marketing_budget_per_month or '0' }}">
+            </div>
+            <div class="col-6 mb-2">
+              <label class="form-label">Other Monthly Expenses (₹)</label>
+              <input type="number" step="0.01" name="other_monthly_expenses" class="form-control" value="{{ form_data.other_monthly_expenses or '0' }}">
+            </div>
+          </div>
+
+          <hr>
+          <h6 class="text-muted">Market Factors</h6>
+          <div class="row">
+            <div class="col-4 mb-2">
+              <label class="form-label">Experience</label>
+              <select name="business_experience" class="form-select">
+                {% for lvl in levels %}<option value="{{ lvl }}" {{ 'selected' if form_data.business_experience == lvl }}>{{ lvl }}</option>{% endfor %}
+              </select>
+            </div>
+            <div class="col-4 mb-2">
+              <label class="form-label">Market Demand</label>
+              <select name="market_demand" class="form-select">
+                {% for lvl in levels %}<option value="{{ lvl }}" {{ 'selected' if form_data.market_demand == lvl }}>{{ lvl }}</option>{% endfor %}
+              </select>
+            </div>
+            <div class="col-4 mb-2">
+              <label class="form-label">Competition</label>
+              <select name="competition" class="form-select">
+                {% for lvl in levels %}<option value="{{ lvl }}" {{ 'selected' if form_data.competition == lvl }}>{{ lvl }}</option>{% endfor %}
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mt-2"><i class="bi bi-cpu"></i> Analyze Business</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    {% if result %}
+    <!-- Business Health Score -->
+    <div class="card panel-card mb-3">
+      <div class="card-body text-center">
+        <h5 class="card-title">Business Health Score</h5>
+        <div class="health-score-circle">{{ result.health.overall_score }}<span>/100</span></div>
+        <div class="row mt-3 text-start">
+          <div class="col-6 col-md-4 mb-2"><span class="score-label">Financial</span><div class="progress"><div class="progress-bar bg-success" style="width:{{ result.health.financial_score }}%">{{ result.health.financial_score }}</div></div></div>
+          <div class="col-6 col-md-4 mb-2"><span class="score-label">Risk (safety)</span><div class="progress"><div class="progress-bar bg-warning" style="width:{{ result.health.risk_score }}%">{{ result.health.risk_score }}</div></div></div>
+          <div class="col-6 col-md-4 mb-2"><span class="score-label">Competition</span><div class="progress"><div class="progress-bar bg-info" style="width:{{ result.health.competition_score }}%">{{ result.health.competition_score }}</div></div></div>
+          <div class="col-6 col-md-4 mb-2"><span class="score-label">Market</span><div class="progress"><div class="progress-bar bg-primary" style="width:{{ result.health.market_score }}%">{{ result.health.market_score }}</div></div></div>
+          <div class="col-6 col-md-4 mb-2"><span class="score-label">Growth</span><div class="progress"><div class="progress-bar bg-secondary" style="width:{{ result.health.growth_score }}%">{{ result.health.growth_score }}</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feasibility -->
+    <div class="card panel-card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Financial Feasibility</h5>
+        <div class="row">
+          <div class="col-6 col-md-4 mb-2"><div class="metric-label">Monthly Revenue</div><div class="metric-value">₹{{ "{:,.0f}".format(result.feasibility.monthly_revenue) }}</div></div>
+          <div class="col-6 col-md-4 mb-2"><div class="metric-label">Monthly Cost</div><div class="metric-value">₹{{ "{:,.0f}".format(result.feasibility.monthly_cost) }}</div></div>
+          <div class="col-6 col-md-4 mb-2"><div class="metric-label">Net Profit</div><div class="metric-value {{ 'text-danger' if result.feasibility.net_profit < 0 else 'text-success' }}">₹{{ "{:,.0f}".format(result.feasibility.net_profit) }}</div></div>
+          <div class="col-6 col-md-4 mb-2"><div class="metric-label">Profit Margin</div><div class="metric-value">{{ result.feasibility.profit_margin_pct }}%</div></div>
+          <div class="col-6 col-md-4 mb-2"><div class="metric-label">Annual ROI</div><div class="metric-value">{{ result.feasibility.roi_pct }}%</div></div>
+          <div class="col-6 col-md-4 mb-2"><div class="metric-label">Break-even</div><div class="metric-value">{{ result.feasibility.breakeven_months if result.feasibility.breakeven_months else 'Never (at current inputs)' }}{{ ' months' if result.feasibility.breakeven_months }}</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ML Risk + Explanation -->
+    <div class="card panel-card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">ML Risk Prediction</h5>
+        <div class="risk-badge risk-{{ result.predicted_risk.split(' ')[0].lower() }}">{{ result.predicted_risk }}</div>
+        <h6 class="mt-3">Risk Factor Explanation</h6>
+        <p class="text-muted small">Ranked by the trained model's feature importance, with the direction your specific inputs push risk.</p>
+        <table class="table table-sm">
+          <thead><tr><th>Factor</th><th>Your Value</th><th>Impact</th><th>Effect</th></tr></thead>
+          <tbody>
+            {% for r in result.risk_explanation %}
+            <tr>
+              <td>{{ r.feature }}</td>
+              <td>{{ r.value }}</td>
+              <td><span class="badge bg-{{ 'danger' if r.impact == 'HIGH' else ('warning text-dark' if r.impact == 'MEDIUM' else 'secondary') }}">{{ r.impact }} ({{ r.importance_pct }}%)</span></td>
+              <td class="{{ 'text-danger' if r.direction == 'increases risk' else ('text-success' if r.direction == 'reduces risk' else 'text-muted') }}">{{ r.direction }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {% if result.saved_id %}
+    <div class="alert alert-success">
+      Saved to <a href="{{ url_for('analyzer.my_businesses') }}">My Businesses</a>.
+      <a href="{{ url_for('analyzer.view_business_profile', profile_id=result.saved_id) }}" class="ms-2">Open What-If Simulator →</a>
+    </div>
+    {% endif %}
+
+    {% else %}
+    <div class="card panel-card">
+      <div class="card-body">
+        <p class="text-muted mb-0">Fill in your business profile to see the full feasibility, ML risk prediction, and Business Health Score.</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

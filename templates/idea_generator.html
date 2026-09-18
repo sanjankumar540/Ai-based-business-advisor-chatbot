@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Business Idea Generator{% endblock %}
+{% block content %}
+<h2 class="mb-1"><i class="bi bi-lightbulb"></i> Business Idea Generator</h2>
+<p class="text-muted mb-4">Get structured, comparable business ideas — each scored with the real trained ML risk model, not generic text.</p>
+
+<div class="row g-4">
+  <div class="col-lg-4">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Your Constraints</h5>
+        <form method="POST" action="{{ url_for('analyzer.idea_generator') }}">
+          <div class="mb-2">
+            <label class="form-label">Available Budget (₹)</label>
+            <input type="number" step="0.01" name="budget" class="form-control" value="{{ form_data.budget or '' }}" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Interests / Keywords (comma-separated)</label>
+            <input type="text" name="keywords" class="form-control" placeholder="e.g. food, technology" value="{{ form_data.keywords or '' }}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Your Experience Level</label>
+            <select name="experience" class="form-select">
+              <option value="Low" {{ 'selected' if form_data.experience == 'Low' }}>Low</option>
+              <option value="Medium" {{ 'selected' if form_data.experience == 'Medium' or not form_data.experience }}>Medium</option>
+              <option value="High" {{ 'selected' if form_data.experience == 'High' }}>High</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary w-100"><i class="bi bi-magic"></i> Generate Ideas</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    {% if ideas %}
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Comparable Business Opportunities</h5>
+        <table class="table align-middle">
+          <thead><tr><th>Business Idea</th><th>Typical Investment</th><th>ML-Predicted Risk</th><th>Market Potential</th></tr></thead>
+          <tbody>
+            {% for idea in ideas %}
+            <tr>
+              <td>{{ idea.name }}<div class="text-muted small">{{ idea.business_type }}</div></td>
+              <td>₹{{ "{:,.0f}".format(idea.investment) }}</td>
+              <td><span class="risk-badge risk-{{ idea.predicted_risk.split(' ')[0].lower() }} small">{{ idea.predicted_risk }}</span></td>
+              <td>{{ idea.potential }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <p class="text-muted small mb-0"><i class="bi bi-info-circle"></i> Each risk level is a genuine prediction from the trained Random Forest model using typical assumptions for that idea type and your experience level — not a static label. Sorted by lowest risk + highest market potential first.</p>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <a href="{{ url_for('analyzer.business_analyzer') }}" class="btn btn-outline-primary"><i class="bi bi-clipboard-data"></i> Run a Full Feasibility Analysis on One of These</a>
+    </div>
+    {% else %}
+    <div class="card panel-card">
+      <div class="card-body">
+        <p class="text-muted mb-0">Enter your budget to see comparable business ideas.</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

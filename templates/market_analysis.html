@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Market Analysis{% endblock %}
+{% block content %}
+<h2 class="mb-4"><i class="bi bi-graph-up-arrow"></i> Market Analysis</h2>
+
+<div class="row g-4">
+  <div class="col-lg-5">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Market Details</h5>
+        <form method="POST" action="{{ url_for('business.market_analysis') }}">
+          <div class="mb-2">
+            <label class="form-label">Business Type</label>
+            <input type="text" name="business_type" class="form-control" value="{{ form_data.business_type or '' }}" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Target Location</label>
+            <input type="text" name="location" class="form-control" value="{{ form_data.location or '' }}" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Target Customers</label>
+            <input type="text" name="target_customers" class="form-control" value="{{ form_data.target_customers or '' }}">
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Budget (₹)</label>
+            <input type="number" step="0.01" name="budget" class="form-control" value="{{ form_data.budget or '' }}">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Product / Service</label>
+            <input type="text" name="product" class="form-control" value="{{ form_data.product or '' }}">
+          </div>
+          <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search"></i> Analyze Market</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    {% if result %}
+    <div class="card panel-card">
+      <div class="card-body">
+        <div class="alert alert-info small"><i class="bi bi-info-circle"></i> {{ result.note }}</div>
+
+        <h6 class="fw-bold mt-3">Target Market</h6>
+        <p>{{ result.target_market }}</p>
+
+        <h6 class="fw-bold mt-3">Customer Profile</h6>
+        <p>{{ result.customer_profile }}</p>
+
+        <h6 class="fw-bold mt-3">Competition Level</h6>
+        <p>{{ result.competition_level }}</p>
+
+        <h6 class="fw-bold mt-3">Opportunities</h6>
+        <ul>{% for o in result.opportunities %}<li>{{ o }}</li>{% endfor %}</ul>
+
+        <h6 class="fw-bold mt-3">Threats</h6>
+        <ul>{% for t in result.threats %}<li>{{ t }}</li>{% endfor %}</ul>
+
+        <h6 class="fw-bold mt-3">Recommended Strategy</h6>
+        <p>{{ result.recommended_strategy }}</p>
+      </div>
+    </div>
+    {% else %}
+    <div class="card panel-card">
+      <div class="card-body">
+        <p class="text-muted">Fill in the form to see a market analysis here.</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

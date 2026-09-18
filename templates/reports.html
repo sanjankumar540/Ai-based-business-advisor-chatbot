@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<h2 class="mb-4"><i class="bi bi-download"></i> Reports</h2>
+
+<div class="row g-4">
+  <div class="col-md-6">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Export Business Analysis Report (PDF)</h5>
+        <p class="text-muted">Includes your latest risk prediction, business parameters, and recommendations.</p>
+        <a href="{{ url_for('reports.export_pdf') }}" class="btn btn-primary"><i class="bi bi-file-earmark-pdf"></i> Download PDF</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card panel-card">
+      <div class="card-body">
+        <h5 class="card-title">Export All Predictions (Excel)</h5>
+        <p class="text-muted">Download a spreadsheet of every risk prediction you've made.</p>
+        <a href="{{ url_for('reports.export_excel') }}" class="btn btn-success"><i class="bi bi-file-earmark-excel"></i> Download Excel</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card panel-card mt-4">
+  <div class="card-body">
+    <h5 class="card-title">Saved Business Plans</h5>
+    {% if plans %}
+    <table class="table table-sm">
+      <thead><tr><th>Name</th><th>Type</th><th>Created</th></tr></thead>
+      <tbody>
+        {% for p in plans %}
+        <tr><td>{{ p.business_name }}</td><td>{{ p.business_type }}</td><td>{{ p.created_at.strftime('%d %b %Y') }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="text-muted mb-0">No saved business plans yet.</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="card panel-card mt-4">
+  <div class="card-body">
+    <h5 class="card-title">Prediction History</h5>
+    {% if predictions %}
+    <table class="table table-sm">
+      <thead><tr><th>Business Type</th><th>Investment</th><th>Predicted Risk</th><th>Date</th></tr></thead>
+      <tbody>
+        {% for p in predictions %}
+        <tr>
+          <td>{{ p.business_type }}</td>
+          <td>₹{{ "{:,.0f}".format(p.investment) }}</td>
+          <td><span class="risk-badge risk-{{ p.predicted_risk.split(' ')[0].lower() }} small">{{ p.predicted_risk }}</span></td>
+          <td>{{ p.created_at.strftime('%d %b %Y') }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p class="text-muted mb-0">No predictions yet.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
