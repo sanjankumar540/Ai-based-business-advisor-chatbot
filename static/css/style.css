@@ -172,6 +172,30 @@ body {
   box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
 
+/* ---------- Landing / Auth ---------- */
+.landing-hero { 
+  background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 40%); 
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0fdfa 0%, #f1f5f9 100%);
+}
+
+.auth-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #f1f5f9;
+  animation: popIn 0.5s ease-out;
+}
+
 /* ---------- Chat UI ---------- */
 .chat-layout {
   display: flex;
@@ -328,6 +352,60 @@ body {
   font-weight: 700;
   font-size: 1.1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.risk-badge.small { font-size: 0.75rem; padding: 0.25rem 0.7rem; }
+.risk-low { background: #dcfce7; color: #166534; }
+.risk-medium { background: #fef08a; color: #854d0e; }
+.risk-high { background: #fee2e2; color: #991b1b; }
+.risk-unknown { background: #f1f5f9; color: #475569; }
+
+/* ---------- Business Health Score ---------- */
+.health-score-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 10px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0.5rem auto;
+  box-shadow: 0 4px 15px rgba(79,70,229,0.15);
+}
+.health-score-circle span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #94a3b8;
+  margin-left: 2px;
+}
+
+.health-score-mini {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+.score-label {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+.metric-value {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 @media (max-width: 900px) {
