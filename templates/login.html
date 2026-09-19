@@ -3,8 +3,11 @@
 {% block public_content %}
 <div class="auth-wrapper">
   <div class="auth-card">
-    <h3 class="text-center mb-4"><i class="bi bi-robot text-primary"></i> Login</h3>
-    <form method="POST" action="{{ url_for('auth.login') }}">
+      <div class="text-center mb-4">
+        <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo" style="height: 48px; width: 48px; border-radius: 12px; object-fit: cover;">
+        <h3 class="mt-2 fw-bold d-inline-block align-middle ms-2">Login</h3>
+      </div>
+      <form method="POST" action="{{ url_for('auth.login') }}">
       <div class="mb-3">
         <label class="form-label">Email address</label>
         <input type="email" name="email" class="form-control" required>
