@@ -21,9 +21,11 @@ class Config:
     DEBUG = os.environ.get("FLASK_DEBUG", "True") == "True"
 
     # --- Database ---
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        "DATABASE_URL", f"sqlite:///{os.path.join(BASE_DIR, 'instance', 'app.db')}"
-    )
+    _db_url = os.environ.get("DATABASE_URL", f"sqlite:///{os.path.join(BASE_DIR, 'instance', 'app.db')}")
+    # Fix old 'postgres://' scheme for SQLAlchemy 1.4+
+    if _db_url.startswith("postgres://"):
+        _db_url = _db_url.replace("postgres://", "postgresql://", 1)
+    SQLALCHEMY_DATABASE_URI = _db_url
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # --- LLM / Demo Mode ---
