@@ -5,7 +5,7 @@ Landing dashboard (stats + quick actions) and the deeper Analytics page
 (charts for risk distribution, query categories, customer segments).
 """
 
-from flask import Blueprint, render_template, session
+from flask import Blueprint, render_template, session, redirect, url_for
 from sqlalchemy import func
 
 from database.database import db
@@ -19,6 +19,8 @@ dashboard_bp = Blueprint("dashboard", __name__)
 @dashboard_bp.route("/")
 def index():
     """Public landing page."""
+    if session.get("user_id"):
+        return redirect(url_for("dashboard.dashboard_home"))
     return render_template("index.html")
 
 
