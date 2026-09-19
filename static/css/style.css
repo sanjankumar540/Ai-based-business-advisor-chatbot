@@ -10,6 +10,11 @@
   --text-main: #f8fafc;
   --card-bg: #111827;
   --border-color: rgba(255, 255, 255, 0.05);
+  
+  /* Bootstrap Overrides to fix invisible text globally */
+  --bs-body-color: #f8fafc;
+  --bs-heading-color: #f8fafc;
+  --bs-body-bg: #060b14;
 }
 
 body {
@@ -17,6 +22,7 @@ body {
   background-attachment: fixed;
   font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
   color: var(--text-main);
+  color-scheme: dark;
 }
 
 /* ---------- Animations ---------- */
@@ -215,18 +221,27 @@ body {
   border-color: var(--border-color);
 }
 .form-control, .form-select {
-  background: #060b14;
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
+  background: #060b14 !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+.form-control::placeholder, .form-select::placeholder {
+  color: #64748b !important;
 }
 .form-control:focus, .form-select:focus {
-  background: #111827;
-  color: var(--text-main);
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 0.25rem rgba(59,130,246,0.25);
+  background: #111827 !important;
+  color: var(--text-main) !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 0.25rem rgba(59,130,246,0.25) !important;
 }
 .form-label {
   color: var(--text-main);
+  font-weight: 500;
+}
+.input-group-text {
+  background: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
 }
 .text-muted {
   color: var(--sidebar-text) !important;
