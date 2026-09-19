@@ -4,7 +4,7 @@
 <div class="auth-wrapper">
   <div class="auth-card">
       <div class="text-center mb-4">
-        <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Logo" style="height: 48px; width: 48px; border-radius: 12px; object-fit: cover;">
+        <img src="{{ url_for('static', filename='img/logo_dark.png') }}" alt="Logo" style="height: 48px; width: 48px; object-fit: contain;">
         <h3 class="mt-2 fw-bold d-inline-block align-middle ms-2">Login</h3>
       </div>
       <form method="POST" action="{{ url_for('auth.login') }}">
