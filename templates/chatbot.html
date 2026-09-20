@@ -73,22 +73,32 @@
       {% endif %}
       {% for msg in messages %}
         <div class="chat-bubble {{ 'user-bubble' if msg.sender == 'user' else 'ai-bubble' }}">
-          <div class="bubble-sender">
-            {% if msg.sender == 'user' %}You{% else %}<i class="bi bi-robot"></i> AI Assistant{% endif %}
-            {% if msg.category %}<span class="badge bg-secondary ms-1">{{ msg.category }}</span>{% endif %}
+          <div class="bubble-sender d-flex justify-content-between align-items-center">
+            <div>
+              {% if msg.sender == 'user' %}You{% else %}<i class="bi bi-robot"></i> AI Assistant{% endif %}
+              {% if msg.category %}<span class="badge bg-secondary ms-1">{{ msg.category }}</span>{% endif %}
+            </div>
+            {% if msg.sender == 'ai' %}
+            <button type="button" class="btn btn-sm btn-link text-muted p-0 ms-2 read-aloud-btn" title="Read aloud" data-text="{{ msg.message | striptags | escape }}">
+              <i class="bi bi-volume-up fs-5"></i>
+            </button>
+            {% endif %}
           </div>
           <div class="bubble-content">{{ msg.message | replace('\n', '<br>') | safe }}</div>
           {% if msg.sources %}
-          <div class="bubble-sources"><i class="bi bi-journal-text"></i> Sources: {{ msg.sources }}</div>
+          <div class="bubble-sources mt-2 small text-muted"><i class="bi bi-journal-text"></i> Sources: {{ msg.sources }}</div>
           {% endif %}
         </div>
       {% endfor %}
     </div>
 
-    <form method="POST" action="{{ url_for('chatbot.send_message') }}" class="chat-input-bar" id="chatForm">
+    <form method="POST" action="{{ url_for('chatbot.send_message') }}" class="chat-input-bar align-items-center" id="chatForm">
       <input type="hidden" name="conv_id" value="{{ active_conversation.id if active_conversation else '' }}">
-      <input type="text" name="message" id="chatInput" class="form-control" placeholder="Type your business question..." autocomplete="off" required>
-      <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Send</button>
+      <button type="button" class="btn btn-outline-light rounded-circle" id="voiceBtn" title="Speak your question" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+        <i class="bi bi-mic fs-5"></i>
+      </button>
+      <input type="text" name="message" id="chatInput" class="form-control" placeholder="Type your business question..." autocomplete="off" required style="flex: 1;">
+      <button type="submit" class="btn btn-primary px-4" style="border-radius: 20px;"><i class="bi bi-send"></i> Send</button>
     </form>
   </div>
 </div>
@@ -116,5 +126,70 @@
       btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Thinking...';
     });
   }
+
+  // --- Voice Chat (Speech to Text) ---
+  const voiceBtn = document.getElementById('voiceBtn');
+  const chatInput = document.getElementById('chatInput');
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (voiceBtn && SpeechRecognition) {
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onstart = function() {
+      voiceBtn.classList.add('btn-danger', 'text-white', 'border-danger');
+      voiceBtn.classList.remove('btn-outline-light');
+      voiceBtn.innerHTML = '<i class="bi bi-mic-fill fs-5"></i>';
+      chatInput.placeholder = "Listening...";
+    };
+
+    recognition.onresult = function(event) {
+      const transcript = event.results[0][0].transcript;
+      chatInput.value = transcript;
+    };
+
+    recognition.onerror = function(event) {
+      console.error("Speech recognition error", event.error);
+      chatInput.placeholder = "Type your business question...";
+    };
+
+    recognition.onend = function() {
+      voiceBtn.classList.remove('btn-danger', 'text-white', 'border-danger');
+      voiceBtn.classList.add('btn-outline-light');
+      voiceBtn.innerHTML = '<i class="bi bi-mic fs-5"></i>';
+      chatInput.placeholder = "Type your business question...";
+    };
+
+    voiceBtn.addEventListener('click', function() {
+      recognition.start();
+    });
+  } else if (voiceBtn) {
+    voiceBtn.style.display = 'none'; // Hide if browser doesn't support it
+  }
+
+  // --- Voice Reply (Text to Speech) ---
+  const readAloudBtns = document.querySelectorAll('.read-aloud-btn');
+  readAloudBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      window.speechSynthesis.cancel(); // Stop any current speech
+      
+      const textToRead = this.getAttribute('data-text');
+      if (textToRead) {
+        const utterance = new SpeechSynthesisUtterance(textToRead);
+        const icon = this.querySelector('i');
+        
+        icon.classList.remove('bi-volume-up');
+        icon.classList.add('bi-volume-up-fill', 'text-primary');
+        
+        utterance.onend = function() {
+          icon.classList.add('bi-volume-up');
+          icon.classList.remove('bi-volume-up-fill', 'text-primary');
+        };
+        
+        window.speechSynthesis.speak(utterance);
+      }
+    });
+  });
 </script>
 {% endblock %}
