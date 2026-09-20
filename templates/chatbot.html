@@ -88,6 +88,10 @@
           {% if msg.sources %}
           <div class="bubble-sources mt-2 small text-muted"><i class="bi bi-journal-text"></i> Sources: {{ msg.sources }}</div>
           {% endif %}
+          
+          {% if loop.last and msg.sender == 'ai' %}
+          <input type="hidden" id="autoPlayText" value="{{ msg.message | striptags | escape }}">
+          {% endif %}
         </div>
       {% endfor %}
     </div>
@@ -190,6 +194,23 @@
         window.speechSynthesis.speak(utterance);
       }
     });
+  });
+
+  // Auto-play the newest AI message on load
+  window.addEventListener('load', function() {
+    const autoPlayInput = document.getElementById('autoPlayText');
+    if (autoPlayInput && autoPlayInput.value) {
+      setTimeout(() => {
+        // Find the last read-aloud button to highlight it
+        const btns = document.querySelectorAll('.read-aloud-btn');
+        if (btns.length > 0) {
+          btns[btns.length - 1].click(); // Simulate click to trigger speech + icon highlight
+        } else {
+          const utterance = new SpeechSynthesisUtterance(autoPlayInput.value);
+          window.speechSynthesis.speak(utterance);
+        }
+      }, 500); // slight delay to ensure UI is ready
+    }
   });
 </script>
 {% endblock %}
