@@ -26,19 +26,18 @@
       <li><a href="{{ url_for('dashboard.dashboard_home') }}"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
       <li><a href="{{ url_for('chatbot.chat_home') }}"><i class="bi bi-chat-dots"></i> AI Assistant</a></li>
       
-      <div class="sidebar-section-label">Decision Support</div>
-      <li><a href="{{ url_for('analyzer.analyzer_home') }}"><i class="bi bi-heart-pulse"></i> Business Analyzer</a></li>
-      <li><a href="{{ url_for('my_businesses.list_businesses') }}"><i class="bi bi-building"></i> My Businesses</a></li>
-      <li><a href="{{ url_for('idea_generator.idea_home') }}"><i class="bi bi-lightbulb"></i> Idea Generator</a></li>
-      <li><a href="{{ url_for('competitors.competitor_home') }}"><i class="bi bi-binoculars"></i> Competitor Analysis</a></li>
-      
-      <div class="sidebar-section-label">Other Tools</div>
-      <li><a href="{{ url_for('business_plan.plan_home') }}"><i class="bi bi-file-earmark-text"></i> Business Plan</a></li>
-      <li><a href="{{ url_for('market_analysis.market_home') }}"><i class="bi bi-graph-up-arrow"></i> Market Analysis</a></li>
-      <li><a href="{{ url_for('risk_prediction.risk_home') }}"><i class="bi bi-shield-exclamation"></i> Risk Prediction</a></li>
-      <li><a href="{{ url_for('analytics.analytics_home') }}"><i class="bi bi-bar-chart"></i> Analytics</a></li>
-      <li><a href="{{ url_for('query_history.history_home') }}"><i class="bi bi-clock-history"></i> Query History</a></li>
-      <li><a href="#"><i class="bi bi-download"></i> Reports</a></li>
+      <li class="sidebar-section-label">Decision Support</li>
+      <li><a href="{{ url_for('analyzer.business_analyzer') }}"><i class="bi bi-clipboard-data"></i> Business Analyzer</a></li>
+      <li><a href="{{ url_for('analyzer.my_businesses') }}"><i class="bi bi-briefcase"></i> My Businesses</a></li>
+      <li><a href="{{ url_for('analyzer.idea_generator') }}"><i class="bi bi-lightbulb"></i> Idea Generator</a></li>
+      <li><a href="{{ url_for('analyzer.competitor_analysis') }}"><i class="bi bi-people"></i> Competitor Analysis</a></li>
+      <li class="sidebar-section-label">Other Tools</li>
+      <li><a href="{{ url_for('business.business_plan') }}"><i class="bi bi-file-earmark-text"></i> Business Plan</a></li>
+      <li><a href="{{ url_for('business.market_analysis') }}"><i class="bi bi-graph-up-arrow"></i> Market Analysis</a></li>
+      <li><a href="{{ url_for('prediction.prediction_page') }}"><i class="bi bi-shield-exclamation"></i> Risk Prediction</a></li>
+      <li><a href="{{ url_for('dashboard.analytics') }}"><i class="bi bi-bar-chart-line"></i> Analytics</a></li>
+      <li><a href="{{ url_for('chatbot.history') }}"><i class="bi bi-clock-history"></i> Query History</a></li>
+      <li><a href="{{ url_for('reports.reports_home') }}"><i class="bi bi-download"></i> Reports</a></li>
     </ul>
     <div class="sidebar-footer">
       <button id="themeToggle" class="btn btn-outline-light w-100 mb-3" style="text-align: left;">
