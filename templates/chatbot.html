@@ -173,6 +173,22 @@
   }
 
   // --- Voice Reply (Text to Speech) ---
+  let preferredVoice = null;
+  
+  function loadVoices() {
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      // Try to find a high-quality "Premium", "Natural", or "Online" voice (e.g. Google, Microsoft)
+      preferredVoice = voices.find(v => (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Online') || v.name.includes('Premium')) && v.lang.startsWith('en')) 
+                       || voices.find(v => v.lang === 'en-US' || v.lang === 'en-GB') 
+                       || voices[0];
+    }
+  }
+  
+  // Voices are loaded asynchronously in many browsers
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+  loadVoices(); // Try loading immediately just in case
+
   const readAloudBtns = document.querySelectorAll('.read-aloud-btn');
   readAloudBtns.forEach(btn => {
     btn.addEventListener('click', function() {
@@ -181,6 +197,15 @@
       const textToRead = this.getAttribute('data-text');
       if (textToRead) {
         const utterance = new SpeechSynthesisUtterance(textToRead);
+        
+        if (preferredVoice) {
+          utterance.voice = preferredVoice;
+        }
+        
+        // Slightly tweak pitch and rate for a more natural human sound
+        utterance.rate = 1.0; 
+        utterance.pitch = 1.05;
+
         const icon = this.querySelector('i');
         
         icon.classList.remove('bi-volume-up');
@@ -201,15 +226,12 @@
     const autoPlayInput = document.getElementById('autoPlayText');
     if (autoPlayInput && autoPlayInput.value) {
       setTimeout(() => {
-        // Find the last read-aloud button to highlight it
+        // Find the last read-aloud button to highlight it and trigger speech
         const btns = document.querySelectorAll('.read-aloud-btn');
         if (btns.length > 0) {
-          btns[btns.length - 1].click(); // Simulate click to trigger speech + icon highlight
-        } else {
-          const utterance = new SpeechSynthesisUtterance(autoPlayInput.value);
-          window.speechSynthesis.speak(utterance);
+          btns[btns.length - 1].click(); 
         }
-      }, 500); // slight delay to ensure UI is ready
+      }, 500); // slight delay to ensure UI and voices are ready
     }
   });
 </script>
